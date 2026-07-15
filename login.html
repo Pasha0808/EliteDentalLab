@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Login — Elite Dental Lab</title>
+<meta name="description" content="Sign in to Elite Dental Lab to track your cases.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="edl-utility"></div>
+
+<div class="page">
+
+<div id="edl-header"></div>
+
+<main>
+  <section class="section auth-section">
+    <div class="container container-narrow">
+      <div class="auth-card" id="login-card">
+        <h1 data-i18n="login.title">Doctor Login</h1>
+        <p class="section-sub" data-i18n="login.sub">Sign in to track your cases and view their current status.</p>
+        <form id="login-form" autocomplete="off">
+          <label><span data-i18n="login.user">Username</span>
+            <input type="text" name="username" required data-i18n-ph="login.userPh" placeholder="your username">
+          </label>
+          <label><span data-i18n="login.pass">Password</span>
+            <input type="password" name="password" required placeholder="••••••••">
+          </label>
+          <p class="login-error" id="login-error" hidden data-i18n="login.error">Incorrect username or password. Please try again.</p>
+          <button type="submit" class="btn btn-primary btn-lg" data-i18n="login.btn">Sign In</button>
+        </form>
+        <div class="demo-note">
+          <p data-i18n="login.demoNote">Demo accounts (temporary, until the real account system is connected):</p>
+          <code>drsmith / demo123</code> · <code>drjones / demo123</code> · <code>elitelab / admin123</code>
+        </div>
+      </div>
+
+      <div class="auth-card" id="loggedin-card" hidden>
+        <h1 data-i18n="login.title">Doctor Login</h1>
+        <p class="section-sub"><span data-i18n="login.loggedInAs">You are signed in as</span> <strong id="whoami"></strong></p>
+        <p><a class="btn btn-primary btn-lg" href="case-tracking.html" data-i18n="login.goTracking">Go to Case Tracking →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="edl-footer"></div>
+
+</div><!-- /.page -->
+
+<script>window.EDL_BASE = "";</script>
+<script src="js/i18n.js"></script>
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
