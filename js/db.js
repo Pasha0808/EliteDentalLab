@@ -1,89 +1,115 @@
 /* ==========================================================================
    Elite Dental Lab — db.js  (DEMO DATABASE)
 
-   ⚠️ This is temporary demo data so the login and case-tracking features
-   can be seen working. Everything here is PUBLIC — never put real patient
-   names, real passwords or any private health information in this file.
-   When ready, this will be replaced by a real secure backend
-   (e.g. Firebase/Supabase) and this file will be deleted.
+   ⚠️ Temporary demo data used only while js/config.js is not yet connected
+   to Supabase. Everything here is PUBLIC.
+
+   PRIVACY BY DESIGN: cases contain NO patient information — they are
+   identified by lab case number + tooth number only. Keep it that way
+   in the real database too.
    ========================================================================== */
 
 window.EDL_DB = {
+  offices: [
+    { id: "off-smith",  name: "Smith Family Dental" },
+    { id: "off-towson", name: "Towson Smiles" }
+  ],
+
   users: [
     {
       username: "drsmith",
+      email: "drsmith@demo.test",
       password: "demo123",
       name: "Dr. Sarah Smith",
-      practice: "Smith Family Dental"
+      role: "office",
+      office_id: "off-smith"
     },
     {
       username: "drjones",
+      email: "drjones@demo.test",
       password: "demo123",
       name: "Dr. Michael Jones",
-      practice: "Towson Smiles"
+      role: "office",
+      office_id: "off-towson"
     },
     {
       username: "elitelab",
+      email: "admin@demo.test",
       password: "admin123",
       name: "Elite Lab Admin",
-      practice: "Elite Dental Lab"
+      role: "admin",
+      office_id: null
     }
   ],
 
-  /* Case status always one of:
-     "Received" → "In Design" → "In Production" → "Quality Check" → "Shipped" */
   statuses: ["Received", "In Design", "In Production", "Quality Check", "Shipped"],
+
+  restorations: [
+    "Zirconia Crown", "E-MAX Crown", "PFM Crown", "Bridge", "Veneer",
+    "Implant Crown", "Custom Abutment", "Hybrid Denture", "Full Denture",
+    "Partial Denture", "Flipper", "Night Guard", "Clear Aligner", "Other"
+  ],
 
   cases: [
     {
-      id: "EDL-1042",
+      id: "demo-1",
+      case_number: "EDL-1042",
+      office_id: "off-smith",
       doctor: "Dr. Sarah Smith",
-      patient: "John Carter",
-      type: "Zirconia Crown — #14",
+      tooth: "#14",
+      restoration: "Zirconia Crown",
       received: "2026-07-06",
       due: "2026-07-17",
       status: "In Production",
-      notes: "Shade A2, adjust contact mesial."
+      notes: "Shade A2."
     },
     {
-      id: "EDL-1043",
+      id: "demo-2",
+      case_number: "EDL-1043",
+      office_id: "off-smith",
       doctor: "Dr. Sarah Smith",
-      patient: "Maria Lopez",
-      type: "E-MAX Veneers — #7–#10",
+      tooth: "#7–#10",
+      restoration: "Veneer",
       received: "2026-07-08",
       due: "2026-07-21",
       status: "In Design",
-      notes: "Patient requests brighter shade, BL2."
+      notes: "E-MAX, shade BL2."
     },
     {
-      id: "EDL-1044",
+      id: "demo-3",
+      case_number: "EDL-1044",
+      office_id: "off-smith",
       doctor: "Dr. Sarah Smith",
-      patient: "Robert Chen",
-      type: "Full Denture — Upper",
+      tooth: "Upper arch",
+      restoration: "Full Denture",
       received: "2026-06-30",
       due: "2026-07-14",
       status: "Shipped",
-      notes: "Shipped via UPS, tracking sent by email."
+      notes: "Shipped via UPS."
     },
     {
-      id: "EDL-1045",
+      id: "demo-4",
+      case_number: "EDL-1045",
+      office_id: "off-towson",
       doctor: "Dr. Michael Jones",
-      patient: "Emily Davis",
-      type: "Night Guard — Hard",
+      tooth: "Full arch",
+      restoration: "Night Guard",
       received: "2026-07-10",
       due: "2026-07-18",
       status: "Received",
-      notes: ""
+      notes: "Hard pressed."
     },
     {
-      id: "EDL-1046",
+      id: "demo-5",
+      case_number: "EDL-1046",
+      office_id: "off-towson",
       doctor: "Dr. Michael Jones",
-      patient: "James Wilson",
-      type: "Implant Crown — #30, screw-retained",
+      tooth: "#30",
+      restoration: "Implant Crown",
       received: "2026-07-03",
       due: "2026-07-16",
       status: "Quality Check",
-      notes: "Nobel Biocare platform."
+      notes: "Screw-retained, Nobel Biocare platform."
     }
   ]
 };

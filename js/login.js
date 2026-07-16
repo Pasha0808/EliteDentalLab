@@ -1,16 +1,28 @@
 /* ==========================================================================
    Elite Dental Lab — login.js
-   Login page: authenticate against the demo database, then redirect to
-   ?next=<page> (default: case tracking).
+   Sign-in page. Delegates to EDL_API (Supabase, or demo until connected).
+   Also completes sign-out when arriving via ?logout=1 from the header.
    ========================================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(location.search);
   const next = params.get("next") || "case-tracking.html";
+  const safeNext = /^[\w\-/]+\.html$/.test(next) ? next : "case-tracking.html";
+
+  if (params.get("logout")) {
+    await window.EDL_API.logout();
+    history.replaceState(null, "", "login.html");
+  }
+
+  // Hide the demo-accounts note once the real backend is connected
+  if (window.EDL_API.ready) {
+    const note = document.getElementById("demo-note");
+    if (note) note.hidden = true;
+  }
 
   const loginCard = document.getElementById("login-card");
   const loggedinCard = document.getElementById("loggedin-card");
-  const session = window.EDL_AUTH.getSession();
+  const session = await window.EDL_API.getSession();
 
   if (session) {
     loginCard.hidden = true;
@@ -19,16 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  document.getElementById("login-form").addEventListener("submit", e => {
+  document.getElementById("login-form").addEventListener("submit", async e => {
     e.preventDefault();
     const f = e.target;
-    const result = window.EDL_AUTH.login(f.username.value, f.password.value);
-    if (result) {
-      // Only allow same-site relative redirects
-      const safeNext = /^[\w\-/]+\.html$/.test(next) ? next : "case-tracking.html";
+    const btn = f.querySelector("button[type=submit]");
+    btn.disabled = true;
+    try {
+      await window.EDL_API.login(f.email.value, f.password.value);
       window.location.href = safeNext;
-    } else {
+    } catch (err) {
       document.getElementById("login-error").hidden = false;
+      btn.disabled = false;
     }
   });
 });

@@ -137,13 +137,17 @@
     if (!area) return;
     const session = window.EDL_AUTH ? window.EDL_AUTH.getSession() : null;
     if (session) {
+      const adminLink = session.role === "admin"
+        ? `<a class="btn btn-ghost btn-sm" href="${B}admin.html">Admin</a>` : "";
       area.innerHTML = `
-        <span class="user-chip" title="${session.practice || ""}">👤 ${session.name}</span>
+        ${adminLink}
+        <span class="user-chip" title="${session.office_name || ""}">👤 ${session.name}</span>
         <a class="logout-link" href="#" id="logout-link" data-i18n="nav.logout">Log out</a>`;
       document.getElementById("logout-link").addEventListener("click", e => {
         e.preventDefault();
-        window.EDL_AUTH.logout();
-        window.location.href = B + "index.html";
+        window.EDL_AUTH.clearLocal();
+        // login.js finishes the real sign-out (Supabase client lives there)
+        window.location.href = B + "login.html?logout=1";
       });
     } else {
       area.innerHTML = `<a class="btn btn-ghost btn-sm" href="${B}login.html" data-i18n="nav.login">Log In</a>`;

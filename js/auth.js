@@ -1,7 +1,8 @@
 /* ==========================================================================
    Elite Dental Lab — auth.js
-   Demo session handling on top of the demo database (js/db.js).
-   Sessions are stored in localStorage until a real backend is connected.
+   Synchronous session snapshot for the shared header (js/site.js).
+   The snapshot is written by js/api.js on login/logout. Real authentication
+   lives in Supabase (or the demo db until the backend is connected).
    ========================================================================== */
 
 window.EDL_AUTH = {
@@ -17,17 +18,8 @@ window.EDL_AUTH = {
     return !!this.getSession();
   },
 
-  login(username, password) {
-    const user = (window.EDL_DB?.users || []).find(
-      u => u.username.toLowerCase() === username.trim().toLowerCase() && u.password === password
-    );
-    if (!user) return null;
-    const session = { username: user.username, name: user.name, practice: user.practice };
-    localStorage.setItem("edl-session", JSON.stringify(session));
-    return session;
-  },
-
-  logout() {
+  /* Clears the local snapshot; the login page finishes the real sign-out. */
+  clearLocal() {
     localStorage.removeItem("edl-session");
   }
 };

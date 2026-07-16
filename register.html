@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account — Elite Dental Lab</title>
+<meta name="description" content="Create your Elite Dental Lab account with the registration code sent to your office.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="edl-utility"></div>
+
+<div class="page">
+
+<div id="edl-header"></div>
+
+<main>
+  <section class="section auth-section">
+    <div class="container container-narrow">
+      <div class="auth-card" id="register-card">
+        <h1 data-i18n="reg.title">Create Your Account</h1>
+        <p class="section-sub" data-i18n="reg.sub">Registration is by invitation. Enter the code Elite Dental Lab sent to your office.</p>
+
+        <div class="demo-note" id="backend-note" hidden>
+          <p data-i18n="reg.needBackend">Registration will open once the secure backend is connected. Please check back soon or call us at 410-667-7773.</p>
+        </div>
+
+        <form id="register-form" autocomplete="off">
+          <label><span data-i18n="reg.code">Registration code</span>
+            <input type="text" name="code" required data-i18n-ph="reg.codePh" placeholder="e.g. K7M2P9QX" style="text-transform:uppercase">
+          </label>
+          <label><span data-i18n="reg.name">Your name / office contact</span>
+            <input type="text" name="displayName" required data-i18n-ph="reg.namePh" placeholder="Dr. Jane Smith">
+          </label>
+          <label><span data-i18n="reg.email">Email</span>
+            <input type="email" name="email" required data-i18n-ph="login.userPh" placeholder="you@practice.com">
+          </label>
+          <label><span data-i18n="reg.pass">Password</span>
+            <input type="password" name="password" required minlength="8" placeholder="••••••••">
+          </label>
+          <label><span data-i18n="reg.pass2">Confirm password</span>
+            <input type="password" name="password2" required minlength="8" placeholder="••••••••">
+          </label>
+          <p class="login-error" id="register-error" hidden></p>
+          <p class="login-success" id="register-success" hidden></p>
+          <button type="submit" class="btn btn-primary btn-lg" data-i18n="reg.btn">Create Account</button>
+        </form>
+        <p class="auth-alt"><a href="login.html" data-i18n="reg.haveAccount">Already have an account? Log in →</a></p>
+        <p class="form-note" data-i18n="track.noPHI">This portal contains no patient information. Cases are identified by lab case number and tooth number only.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="edl-footer"></div>
+
+</div><!-- /.page -->
+
+<script>window.EDL_BASE = "";</script>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/db.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/site.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

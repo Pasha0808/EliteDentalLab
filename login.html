@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doctor Login — Elite Dental Lab</title>
+<title>Office Login — Elite Dental Lab</title>
 <meta name="description" content="Sign in to Elite Dental Lab to track your cases.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,26 +22,27 @@
   <section class="section auth-section">
     <div class="container container-narrow">
       <div class="auth-card" id="login-card">
-        <h1 data-i18n="login.title">Doctor Login</h1>
-        <p class="section-sub" data-i18n="login.sub">Sign in to track your cases and view their current status.</p>
+        <h1 data-i18n="login.title">Office Login</h1>
+        <p class="section-sub" data-i18n="login.sub">Sign in to see your cases and their current status.</p>
         <form id="login-form" autocomplete="off">
-          <label><span data-i18n="login.user">Username</span>
-            <input type="text" name="username" required data-i18n-ph="login.userPh" placeholder="your username">
+          <label><span data-i18n="login.user">Email</span>
+            <input type="text" name="email" required data-i18n-ph="login.userPh" placeholder="you@practice.com">
           </label>
           <label><span data-i18n="login.pass">Password</span>
             <input type="password" name="password" required placeholder="••••••••">
           </label>
-          <p class="login-error" id="login-error" hidden data-i18n="login.error">Incorrect username or password. Please try again.</p>
+          <p class="login-error" id="login-error" hidden data-i18n="login.error">Incorrect email or password. Please try again.</p>
           <button type="submit" class="btn btn-primary btn-lg" data-i18n="login.btn">Sign In</button>
         </form>
-        <div class="demo-note">
-          <p data-i18n="login.demoNote">Demo accounts (temporary, until the real account system is connected):</p>
+        <p class="auth-alt"><a href="register.html" data-i18n="login.registerLink">Have a registration code? Create your account →</a></p>
+        <div class="demo-note" id="demo-note">
+          <p data-i18n="login.demoNote">Demo accounts (temporary, until the secure backend is connected):</p>
           <code>drsmith / demo123</code> · <code>drjones / demo123</code> · <code>elitelab / admin123</code>
         </div>
       </div>
 
       <div class="auth-card" id="loggedin-card" hidden>
-        <h1 data-i18n="login.title">Doctor Login</h1>
+        <h1 data-i18n="login.title">Office Login</h1>
         <p class="section-sub"><span data-i18n="login.loggedInAs">You are signed in as</span> <strong id="whoami"></strong></p>
         <p><a class="btn btn-primary btn-lg" href="case-tracking.html" data-i18n="login.goTracking">Go to Case Tracking →</a></p>
       </div>
@@ -54,9 +55,12 @@
 </div><!-- /.page -->
 
 <script>window.EDL_BASE = "";</script>
+<script src="js/config.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/db.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/auth.js"></script>
+<script src="js/api.js"></script>
 <script src="js/site.js"></script>
 <script src="js/login.js"></script>
 </body>

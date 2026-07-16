@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Elite Dental Lab</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="edl-utility"></div>
+
+<div class="page">
+
+<div id="edl-header"></div>
+
+<main>
+  <!-- Shown when not logged in as admin -->
+  <section class="section auth-section" id="denied-panel" hidden>
+    <div class="container container-narrow">
+      <div class="auth-card locked-card">
+        <div class="locked-icon">🔒</div>
+        <h1>Admin access only</h1>
+        <p class="section-sub">This page is for Elite Dental Lab staff. Please log in with the admin account.</p>
+        <p><a class="btn btn-primary btn-lg" href="login.html?next=admin.html">Log In</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin panel -->
+  <section class="section" id="admin-panel" hidden>
+    <div class="container">
+      <div class="page-hero-inline">
+        <p class="eyebrow">Lab administration</p>
+        <h1>Admin Panel</h1>
+        <p class="lead">Add cases, update statuses, and issue registration codes to dental offices.</p>
+      </div>
+
+      <!-- Add case -->
+      <div class="admin-card">
+        <h2>Add a case</h2>
+        <p class="admin-hint">Enter every new case here at intake — whether it arrived digitally (iTero, Trios…) or as a physical slip scanned into 3Shape. <strong>Never enter patient names.</strong></p>
+        <form id="case-form" class="admin-form">
+          <label>Case number
+            <input type="text" name="case_number" required placeholder="EDL-1047">
+          </label>
+          <label>Office
+            <select name="office_id" id="office-select" required></select>
+          </label>
+          <label>Doctor (optional)
+            <input type="text" name="doctor" placeholder="Dr. Smith">
+          </label>
+          <label>Tooth / arch
+            <input type="text" name="tooth" placeholder="#14, Upper arch…">
+          </label>
+          <label>Restoration
+            <select name="restoration" id="restoration-select"></select>
+          </label>
+          <label>Received
+            <input type="date" name="received" required>
+          </label>
+          <label>Expected completion
+            <input type="date" name="due">
+          </label>
+          <label>Status
+            <select name="status" id="status-select"></select>
+          </label>
+          <label class="admin-notes">Notes (no patient info)
+            <input type="text" name="notes" placeholder="Shade A2…">
+          </label>
+          <button type="submit" class="btn btn-primary">Add Case</button>
+        </form>
+        <p class="login-error" id="case-error" hidden></p>
+        <p class="login-success" id="case-success" hidden></p>
+      </div>
+
+      <!-- Case list -->
+      <div class="admin-card">
+        <h2>All cases</h2>
+        <div class="track-toolbar">
+          <input type="text" id="admin-filter" placeholder="Filter by case #, office, tooth, status…">
+        </div>
+        <div class="table-wrap">
+          <table class="price-table admin-table" id="cases-table">
+            <thead>
+              <tr>
+                <th>Case #</th><th>Office</th><th>Doctor</th><th>Tooth</th>
+                <th>Restoration</th><th>Received</th><th>Due</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="track-hint" id="admin-empty" hidden>No cases yet.</p>
+      </div>
+
+      <!-- Offices & registration codes -->
+      <div class="admin-card">
+        <h2>Offices &amp; registration codes</h2>
+        <p class="admin-hint">Create an office, then generate a single-use code and send it to them yourself (call, text or email). They redeem it on the Register page, and their account is permanently limited to their own cases.</p>
+        <div id="codes-backend-note" class="demo-note" hidden>
+          <p>Office and code management becomes available once the Supabase backend is connected.</p>
+        </div>
+        <div id="codes-ui" hidden>
+          <form id="office-form" class="admin-form admin-form-inline">
+            <label>New office name
+              <input type="text" name="name" placeholder="Bright Smile Dental">
+            </label>
+            <button type="submit" class="btn btn-ghost">Create Office</button>
+          </form>
+          <form id="code-form" class="admin-form admin-form-inline">
+            <label>Generate code for
+              <select name="office_id" id="code-office-select"></select>
+            </label>
+            <button type="submit" class="btn btn-primary">Generate Code</button>
+          </form>
+          <p class="login-success" id="new-code" hidden></p>
+          <div class="table-wrap">
+            <table class="price-table admin-table" id="codes-table">
+              <thead>
+                <tr><th>Code</th><th>Office</th><th>Created</th><th>Status</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="edl-footer"></div>
+
+</div><!-- /.page -->
+
+<script>window.EDL_BASE = "";</script>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/db.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/site.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

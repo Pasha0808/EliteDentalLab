@@ -25,7 +25,7 @@
       <div class="auth-card locked-card">
         <div class="locked-icon">🔒</div>
         <h1 data-i18n="track.lockedTitle">Please log in to track cases</h1>
-        <p class="section-sub" data-i18n="track.lockedSub">Case information is only available to registered doctors. Sign in to view the status of your cases.</p>
+        <p class="section-sub" data-i18n="track.lockedSub">Case information is only available to registered offices. Sign in to view the status of your cases.</p>
         <p><a class="btn btn-primary btn-lg" href="login.html?next=case-tracking.html" data-i18n="track.lockedBtn">Log In to Continue</a></p>
       </div>
     </div>
@@ -35,24 +35,21 @@
   <section class="section" id="tracking-panel" hidden>
     <div class="container container-narrow">
       <div class="page-hero-inline">
-        <p class="eyebrow" data-i18n="track.title">Case Tracking</p>
+        <p class="eyebrow" id="office-name"></p>
         <h1 data-i18n="track.title">Case Tracking</h1>
-        <p class="lead" data-i18n="track.sub">Look up any case by doctor and patient name to see its current status.</p>
+        <p class="lead" data-i18n="track.sub">All of your office's cases and where each one is in production.</p>
       </div>
 
-      <form class="track-form" id="track-form">
-        <label><span data-i18n="track.doctor">Doctor name</span>
-          <input type="text" name="doctor" data-i18n-ph="track.doctorPh" placeholder="e.g. Dr. Smith">
-        </label>
-        <label><span data-i18n="track.patient">Patient name</span>
-          <input type="text" name="patient" data-i18n-ph="track.patientPh" placeholder="e.g. John Carter">
-        </label>
-        <button type="submit" class="btn btn-primary" data-i18n="track.search">Find Case</button>
-      </form>
-      <p class="track-hint" id="track-hint" hidden data-i18n="track.hint">Enter at least one name to search.</p>
-      <p class="track-hint" id="no-results" hidden data-i18n="track.noResults">No cases found for that doctor and patient. Check the spelling, or call us at 410-667-7773.</p>
+      <div class="track-toolbar">
+        <input type="text" id="filter-input" data-i18n-ph="track.filterPh" placeholder="Filter by case #, tooth, doctor or restoration…">
+      </div>
+
+      <p class="track-hint" id="track-empty" hidden data-i18n="track.empty">No cases on file yet. Once we receive your first case it will appear here.</p>
+      <p class="track-hint" id="track-nomatch" hidden data-i18n="track.noMatch">No cases match that filter.</p>
 
       <div id="results"></div>
+
+      <p class="form-note phi-note" data-i18n="track.noPHI">This portal contains no patient information. Cases are identified by lab case number and tooth number only.</p>
     </div>
   </section>
 </main>
@@ -62,9 +59,12 @@
 </div><!-- /.page -->
 
 <script>window.EDL_BASE = "";</script>
+<script src="js/config.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/db.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/auth.js"></script>
+<script src="js/api.js"></script>
 <script src="js/site.js"></script>
 <script src="js/tracking.js"></script>
 </body>

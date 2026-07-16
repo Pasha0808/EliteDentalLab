@@ -1,25 +1,38 @@
 /* ==========================================================================
    Elite Dental Lab — tracking.js
-   Case tracking page: requires login, then searches the demo database by
-   doctor and/or patient name and renders each case with a status timeline.
+   Case tracking page: requires login, lists the signed-in office's cases
+   (the backend's row-level security guarantees offices only ever receive
+   their own rows), with a client-side filter and status timelines.
    ========================================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const session = window.EDL_AUTH.getSession();
+document.addEventListener("DOMContentLoaded", async () => {
+  const session = await window.EDL_API.getSession();
   document.getElementById("locked-panel").hidden = !!session;
   document.getElementById("tracking-panel").hidden = !session;
   if (!session) return;
 
-  const form = document.getElementById("track-form");
+  const isAdmin = session.role === "admin";
+  document.getElementById("office-name").textContent =
+    isAdmin ? "Elite Dental Lab — all offices" : (session.office_name || "");
+
   const results = document.getElementById("results");
-  const hint = document.getElementById("track-hint");
-  const noResults = document.getElementById("no-results");
+  const emptyEl = document.getElementById("track-empty");
+  const noMatchEl = document.getElementById("track-nomatch");
+  const filterInput = document.getElementById("filter-input");
   const STATUSES = window.EDL_DB.statuses;
+
+  let cases = [];
+  try {
+    cases = await window.EDL_API.listMyCases();
+  } catch (err) {
+    emptyEl.hidden = false;
+    return;
+  }
 
   function statusBadge(status) {
     const idx = STATUSES.indexOf(status);
     const cls = ["st-received", "st-design", "st-production", "st-quality", "st-shipped"][idx] || "st-received";
-    return `<span class="status-badge ${cls}" data-i18n="status.${status}">${window.edlT("status." + status)}</span>`;
+    return `<span class="status-badge ${cls}">${window.edlT("status." + status)}</span>`;
   }
 
   function timeline(status) {
@@ -27,8 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return `<ol class="status-timeline">` + STATUSES.map((s, i) => `
       <li class="${i < current ? "done" : ""} ${i === current ? "current" : ""}">
         <span class="dot"></span>
-        <span class="label" data-i18n="status.${s}">${window.edlT("status." + s)}</span>
+        <span class="label">${window.edlT("status." + s)}</span>
       </li>`).join("") + `</ol>`;
+  }
+
+  function esc(v) {
+    return String(v == null ? "" : v).replace(/[&<>"]/g, ch =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
   }
 
   function caseCard(c) {
@@ -36,46 +54,48 @@ document.addEventListener("DOMContentLoaded", () => {
     <article class="case-card">
       <header class="case-card-head">
         <div>
-          <h3>${c.patient}</h3>
-          <p class="case-doctor">${c.doctor}</p>
+          <h3>${esc(c.case_number)} · ${esc(c.restoration)}</h3>
+          <p class="case-doctor">${esc(c.tooth || "")}${c.doctor ? " · " + esc(c.doctor) : ""}${isAdmin && c.office_name ? " · " + esc(c.office_name) : ""}</p>
         </div>
         ${statusBadge(c.status)}
       </header>
       ${timeline(c.status)}
       <dl class="case-meta">
-        <div><dt data-i18n="track.caseId">Case ID</dt><dd>${c.id}</dd></div>
-        <div><dt data-i18n="track.type">Restoration</dt><dd>${c.type}</dd></div>
-        <div><dt data-i18n="track.received">Received</dt><dd>${c.received}</dd></div>
-        <div><dt data-i18n="track.due">Expected completion</dt><dd>${c.due}</dd></div>
-        ${c.notes ? `<div class="case-notes"><dt data-i18n="track.notes">Notes</dt><dd>${c.notes}</dd></div>` : ""}
+        <div><dt>${window.edlT("track.caseId")}</dt><dd>${esc(c.case_number)}</dd></div>
+        <div><dt>${window.edlT("track.tooth")}</dt><dd>${esc(c.tooth || "—")}</dd></div>
+        <div><dt>${window.edlT("track.received")}</dt><dd>${esc(c.received)}</dd></div>
+        <div><dt>${window.edlT("track.due")}</dt><dd>${esc(c.due || "—")}</dd></div>
+        ${c.notes ? `<div class="case-notes"><dt>${window.edlT("track.notes")}</dt><dd>${esc(c.notes)}</dd></div>` : ""}
       </dl>
     </article>`;
   }
 
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const doctor = form.doctor.value.trim().toLowerCase();
-    const patient = form.patient.value.trim().toLowerCase();
-    hint.hidden = true;
-    noResults.hidden = true;
-    results.innerHTML = "";
+  function render() {
+    const q = filterInput.value.trim().toLowerCase();
+    emptyEl.hidden = true;
+    noMatchEl.hidden = true;
 
-    if (!doctor && !patient) {
-      hint.hidden = false;
+    if (!cases.length) {
+      results.innerHTML = "";
+      emptyEl.hidden = false;
       return;
     }
 
-    const matches = window.EDL_DB.cases.filter(c => {
-      const okDoctor = !doctor || c.doctor.toLowerCase().includes(doctor);
-      const okPatient = !patient || c.patient.toLowerCase().includes(patient);
-      return okDoctor && okPatient;
-    });
+    const shown = !q ? cases : cases.filter(c =>
+      [c.case_number, c.tooth, c.doctor, c.restoration, c.office_name, c.status]
+        .some(v => (v || "").toLowerCase().includes(q))
+    );
 
-    if (!matches.length) {
-      noResults.hidden = false;
+    if (!shown.length) {
+      results.innerHTML = "";
+      noMatchEl.hidden = false;
       return;
     }
-    results.innerHTML = matches.map(caseCard).join("");
-    window.edlApplyLanguage(window.EDL_LANG); // translate injected labels
-  });
+    results.innerHTML = shown.map(caseCard).join("");
+  }
+
+  filterInput.addEventListener("input", render);
+  document.getElementById("btn-en").addEventListener("click", render);
+  document.getElementById("btn-es").addEventListener("click", render);
+  render();
 });
