@@ -526,6 +526,70 @@ html:not(.m) .has-dropdown:hover .dropdown { display: block; }
   color: var(--ink-soft);
   text-align: center;
 }
+
+/* ---------- Photo carousel ---------- */
+.carousel { position: relative; }
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+.carousel-track figure {
+  flex: 0 0 100%;
+  margin: 0;
+}
+.carousel-track img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #fff;
+}
+.car-prev, .car-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.15s ease;
+  line-height: 1;
+}
+.car-prev:hover, .car-next:hover { background: #fff; }
+.car-prev { left: 12px; }
+.car-next { right: 12px; }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.carousel-dots button {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-soft);
+  cursor: pointer;
+  padding: 0;
+}
+.carousel-dots button.active { background: var(--accent); }
+.carousel .car-caption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
 .check-list { list-style: none; display: grid; gap: 10px; }
 .check-list li { padding-left: 30px; position: relative; color: var(--ink-soft); font-weight: 500; }
 .check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }

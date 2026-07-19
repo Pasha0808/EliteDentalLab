@@ -47,11 +47,11 @@
             <span data-i18n="nav.ourServices">Our Services</span><span class="caret">▾</span>
           </button>
           <div class="dropdown">
-            <a href="${B}services/crowns-bridges.html" data-i18n="nav.svcCrowns">Bridges &amp; Crowns</a>
-            <a href="${B}services/implants.html" data-i18n="nav.svcImplants">Implants</a>
-            <a href="${B}services/full-dentures.html" data-i18n="nav.svcDentures">Full Dentures</a>
-            <a href="${B}services/clear-aligners.html" data-i18n="nav.svcAligners">Clear Aligners</a>
-            <a href="${B}services/splints-guards.html" data-i18n="nav.svcGuards">Splints &amp; Guards</a>
+            <a href="${B}services/crowns-bridges.html" data-i18n="nav.svcCrowns">Bridges &amp; Crowns and Veneers</a>
+            <a href="${B}services/implants.html" data-i18n="nav.svcImplants">Implant Restorations</a>
+            <a href="${B}services/zirconia-hybrid-dentures.html" data-i18n="nav.svcHybrid">Zirconia Hybrid Dentures</a>
+            <a href="${B}services/dentures.html" data-i18n="nav.svcDentures">Dentures</a>
+            <a href="${B}services/bite-guards-trays.html" data-i18n="nav.svcGuards">Bite Guards &amp; Trays</a>
           </div>
         </div>
         <a href="${B}pricing.html" data-i18n="nav.pricing">Pricing</a>
@@ -102,11 +102,11 @@
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.services">Services</h4>
-        <a href="${B}services/crowns-bridges.html" data-i18n="nav.svcCrowns">Bridges &amp; Crowns</a>
-        <a href="${B}services/implants.html" data-i18n="nav.svcImplants">Implants</a>
-        <a href="${B}services/full-dentures.html" data-i18n="nav.svcDentures">Full Dentures</a>
-        <a href="${B}services/clear-aligners.html" data-i18n="nav.svcAligners">Clear Aligners</a>
-        <a href="${B}services/splints-guards.html" data-i18n="nav.svcGuards">Splints &amp; Guards</a>
+        <a href="${B}services/crowns-bridges.html" data-i18n="nav.svcCrowns">Bridges &amp; Crowns and Veneers</a>
+        <a href="${B}services/implants.html" data-i18n="nav.svcImplants">Implant Restorations</a>
+        <a href="${B}services/zirconia-hybrid-dentures.html" data-i18n="nav.svcHybrid">Zirconia Hybrid Dentures</a>
+        <a href="${B}services/dentures.html" data-i18n="nav.svcDentures">Dentures</a>
+        <a href="${B}services/bite-guards-trays.html" data-i18n="nav.svcGuards">Bite Guards &amp; Trays</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.contact">Contact</h4>
@@ -226,6 +226,38 @@
   mainNav.querySelectorAll("a").forEach(a =>
     a.addEventListener("click", () => mainNav.classList.remove("open"))
   );
+
+  /* ---------------- Photo carousels ---------------- */
+
+  document.querySelectorAll("[data-carousel]").forEach(car => {
+    const track = car.querySelector(".carousel-track");
+    const slides = track.children.length;
+    if (slides < 2) return;
+    let index = 0;
+
+    const dotsWrap = document.createElement("div");
+    dotsWrap.className = "carousel-dots";
+    for (let i = 0; i < slides; i++) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Photo " + (i + 1));
+      dot.addEventListener("click", () => go(i));
+      dotsWrap.appendChild(dot);
+    }
+    car.appendChild(dotsWrap);
+
+    function go(i) {
+      index = (i + slides) % slides;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dotsWrap.querySelectorAll("button").forEach((d, j) =>
+        d.classList.toggle("active", j === index)
+      );
+    }
+
+    car.querySelector(".car-prev").addEventListener("click", () => go(index - 1));
+    car.querySelector(".car-next").addEventListener("click", () => go(index + 1));
+    go(0);
+  });
 
   /* ---------------- Active page highlight ---------------- */
 
