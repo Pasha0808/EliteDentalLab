@@ -177,6 +177,7 @@ window.EDL_I18N = {
     "pg.materials": "Materials & options",
     "pg.turnaround": "Turnaround",
     "pg.turnaroundVal": "Standard turnaround details coming soon — call us for current times.",
+    "pg.caseCaption": "Actual case from our lab",
 
     "pg.crowns.title": "Bridges & Crowns",
     "pg.crowns.sub": "Single units to full-mouth reconstructions, crafted for fit, function and lifelike esthetics.",
@@ -470,6 +471,7 @@ window.EDL_I18N = {
     "pg.materials": "Materiales y opciones",
     "pg.turnaround": "Tiempo de entrega",
     "pg.turnaroundVal": "Los detalles de tiempos de entrega estarán disponibles pronto — llámenos para conocer los tiempos actuales.",
+    "pg.caseCaption": "Caso real de nuestro laboratorio",
 
     "pg.crowns.title": "Puentes y Coronas",
     "pg.crowns.sub": "Desde unidades individuales hasta reconstrucciones completas, elaboradas para un ajuste, función y estética naturales.",

@@ -513,6 +513,19 @@ html:not(.m) .has-dropdown:hover .dropdown { display: block; }
 .page-copy h3 { margin: 28px 0 12px; }
 .page-copy > p { color: var(--ink-soft); }
 .page-media { display: grid; gap: 20px; }
+.case-photo { margin: 0; }
+.case-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.case-photo figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
 .check-list { list-style: none; display: grid; gap: 10px; }
 .check-list li { padding-left: 30px; position: relative; color: var(--ink-soft); font-weight: 500; }
 .check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
