@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -20,34 +21,27 @@
 
 <main id="top">
 
-<!-- ===== Hero ===== -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow" data-i18n="hero.eyebrow">Full-service digital dental laboratory · Cockeysville, MD</p>
-      <h1 data-i18n="hero.title">Precision restorations. Designed digitally, finished by hand.</h1>
-      <p class="lead" data-i18n="hero.sub">For over 25 years, Elite Dental Lab has partnered with dentists to restore healthy, natural-looking smiles. Every case is scanned, designed, milled and layered under one roof — proudly made in the USA.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary btn-lg" href="#send" data-i18n="hero.cta1">Send Us a Case</a>
-        <a class="btn btn-ghost btn-lg" href="#services" data-i18n="hero.cta2">Explore Services</a>
-      </div>
-      <ul class="hero-points">
-        <li data-i18n="hero.point1">In-house production, start to finish</li>
-        <li data-i18n="hero.point2">FDA-approved materials only</li>
-        <li data-i18n="hero.point3">All major scanners &amp; implant systems supported</li>
-      </ul>
+<!-- ===== Hero: full-screen lab video ===== -->
+<section class="hero hero-video">
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true" id="hero-video">
+    <source src="assets/video/lab-loop.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="eyebrow" data-i18n="hero.eyebrow">Full-service digital dental laboratory · Cockeysville, MD</p>
+    <h1 data-i18n="hero.title">Precision restorations. Designed digitally, finished by hand.</h1>
+    <p class="lead" data-i18n="hero.sub">For over 25 years, Elite Dental Lab has partnered with dentists to restore healthy, natural-looking smiles. Every case is scanned, designed, milled and layered under one roof — proudly made in the USA.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary btn-lg" href="#send" data-i18n="hero.cta1">Send Us a Case</a>
+      <a class="btn btn-ghost btn-lg" href="#services" data-i18n="hero.cta2">Explore Services</a>
     </div>
-    <div class="hero-media">
-      <!-- IMAGE PLACEHOLDER: hero photo or video -->
-      <div class="media-placeholder media-hero">
-        <span data-i18n="ph.heroMedia">Your hero image or video goes here</span>
-      </div>
-      <div class="hero-badge">
-        <strong data-i18n="hero.badgeTop">Made in USA</strong>
-        <span data-i18n="hero.badgeBottom">All final products</span>
-      </div>
-    </div>
+    <ul class="hero-points">
+      <li data-i18n="hero.point1">In-house production, start to finish</li>
+      <li data-i18n="hero.point2">FDA-approved materials only</li>
+      <li data-i18n="hero.point3">All major scanners &amp; implant systems supported</li>
+    </ul>
   </div>
+  <button class="hero-pause" id="hero-pause" type="button" aria-pressed="false" aria-label="Pause background video">⏸</button>
 </section>
 
 <!-- ===== Stats bar ===== -->
@@ -196,41 +190,25 @@
     </div>
     <div class="steps-grid">
       <article class="step">
+        <img class="step-photo" src="assets/img/step-scan.jpg" alt="Intraoral scanner and computer showing a digital scan" loading="lazy">
         <span class="step-num">1</span>
         <h3 data-i18n="send.s1t">Scan or take an impression</h3>
         <p data-i18n="send.s1p">Send digital files straight from your scanner — 3Shape Trios, iTero, Carestream, 3M True Definition, Sirona Cerec Connect or PlanScan E4D — or prepare a traditional impression.</p>
       </article>
       <article class="step">
+        <img class="step-photo contain" src="assets/img/step-rx.png" alt="Prescription form icon" loading="lazy">
         <span class="step-num">2</span>
         <h3 data-i18n="send.s2t">Include your RX form</h3>
         <p data-i18n="send.s2p">Fill out our prescription form with your case details and preferences so our technicians have everything they need.</p>
-        <a class="text-link" href="#" data-i18n="send.s2link">Download RX form →</a>
+        <a class="text-link" href="assets/Elite-Dental-Lab-RX-Form.pdf" download data-i18n="send.s2link">Download RX form →</a>
       </article>
       <article class="step">
+        <img class="step-photo" src="assets/img/step-ship.jpg" alt="USPS shipping package" loading="lazy">
         <span class="step-num">3</span>
         <h3 data-i18n="send.s3t">Ship it or send it digitally</h3>
         <p data-i18n="send.s3p">Physical cases can be shipped with any major carrier — or request a shipping label from us and we'll take care of it.</p>
         <a class="text-link" href="#contact" data-i18n="send.s3link">Request a shipping label →</a>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Our Work ===== -->
-<section class="section section-alt" id="work">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow" data-i18n="work.eyebrow">Our work</p>
-      <h2 data-i18n="work.title">Results we're proud of</h2>
-      <p class="section-sub" data-i18n="work.sub">A selection of recent cases from our lab. Photos coming soon.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="media-placeholder media-square"><span data-i18n="ph.case">Case photo</span></div>
-      <div class="media-placeholder media-square"><span data-i18n="ph.case">Case photo</span></div>
-      <div class="media-placeholder media-square"><span data-i18n="ph.case">Case photo</span></div>
-      <div class="media-placeholder media-square"><span data-i18n="ph.case">Case photo</span></div>
-      <div class="media-placeholder media-square"><span data-i18n="ph.case">Case photo</span></div>
-      <div class="media-placeholder media-square"><span data-i18n="ph.case">Case photo</span></div>
     </div>
   </div>
 </section>
@@ -303,8 +281,7 @@
         <li><strong data-i18n="contact.address">Address</strong><span>3 Hillside Ave, Cockeysville, MD 21030</span></li>
         <li><strong data-i18n="contact.hours">Hours</strong><span data-i18n="contact.hoursVal">Mon–Fri · (add your hours here)</span></li>
       </ul>
-      <!-- MAP PLACEHOLDER -->
-      <div class="media-placeholder media-map"><span data-i18n="ph.map">Map placeholder — embed Google Maps here</span></div>
+      <iframe class="map-embed" src="https://www.google.com/maps?q=3+Hillside+Ave,+Cockeysville,+MD+21030&output=embed" loading="lazy" title="Map showing Elite Dental Lab at 3 Hillside Ave, Cockeysville, MD 21030" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
     <form class="contact-form" id="contact-form">
       <h3 data-i18n="form.title">Send us a message</h3>
@@ -312,6 +289,9 @@
       <label><span data-i18n="form.practice">Practice name</span><input type="text" name="practice" data-i18n-ph="form.practicePh" placeholder="Smile Dental Care"></label>
       <label><span data-i18n="form.email">Email</span><input type="email" name="email" required placeholder="you@practice.com"></label>
       <label><span data-i18n="form.message">Message</span><textarea name="message" rows="5" required data-i18n-ph="form.messagePh" placeholder="Tell us about your case or question…"></textarea></label>
+      <label class="hp-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <label><span id="captcha-label"></span><input class="captcha-input" type="text" name="captcha" required inputmode="numeric" autocomplete="off" aria-describedby="captcha-error"></label>
+      <p class="login-error" id="captcha-error" role="alert" hidden data-i18n="form.captchaErr">Wrong answer to the spam check. Please try again.</p>
       <button type="submit" class="btn btn-primary btn-lg" data-i18n="form.send">Send Message</button>
       <p class="form-note" data-i18n="form.note">This form opens your email app for now — it can be connected to a mail service later.</p>
     </form>

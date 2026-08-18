@@ -16,6 +16,7 @@
   /* ---------------- Templates ---------------- */
 
   const utilityHTML = `
+  <a class="skip-link" href="#edl-main" data-i18n="util.skip">Skip to main content</a>
   <div class="utility-bar">
     <div class="utility-inner">
       <div class="switch-group" role="group" aria-label="View mode">
@@ -24,20 +25,24 @@
         <button class="switch-btn" id="btn-mobile" data-i18n="util.mobile">Mobile</button>
       </div>
       <a class="utility-phone" href="tel:4106677773">&#9742; 410-667-7773</a>
-      <div class="switch-group" role="group" aria-label="Language">
-        <button class="switch-btn lang-btn" id="btn-en">English</button>
-        <button class="switch-btn lang-btn" id="btn-es">Español</button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <button class="lang-current" id="lang-current" aria-haspopup="listbox"></button>
+        <div class="lang-menu">
+          <button type="button" data-lang="en"><span class="lang-flag">🇺🇸</span> English</button>
+          <button type="button" data-lang="es"><span class="lang-flag">🇪🇸</span> Español</button>
+          <button type="button" data-lang="de"><span class="lang-flag">🇩🇪</span> Deutsch</button>
+        </div>
       </div>
     </div>
   </div>`;
 
-  const logoSVG = `<svg viewBox="0 0 40 40" width="34" height="34"><path d="M20 3c-6 0-10 4-10 10 0 5 2 8 3 13 .8 4 1.5 9 4 9 2.2 0 1.6-6 3-6s.8 6 3 6c2.5 0 3.2-5 4-9 1-5 3-8 3-13 0-6-4-10-10-10z" fill="currentColor"/></svg>`;
+  const logoIMG = `<img class="logo-img" src="${B}assets/img/logo.png" alt="Elite Dental Lab logo">`;
 
   const headerHTML = `
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="${B}index.html">
-        <span class="logo-mark" aria-hidden="true">${logoSVG}</span>
+        ${logoIMG}
         <span class="logo-text">Elite <em>Dental Lab</em></span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
@@ -86,7 +91,7 @@
     <div class="container footer-grid">
       <div class="footer-col footer-brand">
         <a class="logo logo-light" href="${B}index.html">
-          <span class="logo-mark" aria-hidden="true">${logoSVG}</span>
+          ${logoIMG}
           <span class="logo-text">Elite <em>Dental Lab</em></span>
         </a>
         <p data-i18n="footer.tagline">Quality dental lab work, made with the best digital solutions — in Cockeysville, Maryland since day one.</p>
@@ -95,7 +100,6 @@
       <div class="footer-col">
         <h4 data-i18n="footer.company">Company</h4>
         <a href="${B}index.html#about" data-i18n="nav.about">About</a>
-        <a href="${B}index.html#work" data-i18n="nav.work">Our Work</a>
         <a href="${B}pricing.html" data-i18n="nav.pricing">Pricing</a>
         <a href="${B}case-tracking.html" data-i18n="nav.tracking">Case Tracking</a>
         <a href="${B}index.html#contact" data-i18n="nav.contact">Contact</a>
@@ -127,6 +131,8 @@
   const mountH = document.getElementById("edl-header");
   const mountF = document.getElementById("edl-footer");
   if (mountU) mountU.outerHTML = utilityHTML;
+  const mainEl = document.querySelector("main");
+  if (mainEl) mainEl.id = "edl-main";
   if (mountH) mountH.outerHTML = headerHTML;
   if (mountF) mountF.outerHTML = footerHTML;
 
@@ -197,18 +203,35 @@
   /* ---------------- Language ---------------- */
 
   window.edlApplyLanguage(window.EDL_LANG);
-  document.getElementById("btn-en").addEventListener("click", () => window.edlApplyLanguage("en"));
-  document.getElementById("btn-es").addEventListener("click", () => window.edlApplyLanguage("es"));
+  const langDrop = document.getElementById("lang-dropdown");
+  document.getElementById("lang-current").addEventListener("click", e => {
+    e.stopPropagation();
+    langDrop.classList.toggle("open");
+  });
+  langDrop.querySelectorAll(".lang-menu button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      window.edlApplyLanguage(btn.dataset.lang);
+      langDrop.classList.remove("open");
+    });
+  });
+  document.addEventListener("click", () => langDrop.classList.remove("open"));
 
   /* ---------------- Dropdown menus ---------------- */
 
   document.querySelectorAll(".has-dropdown .nav-drop-btn").forEach(btn => {
+    btn.setAttribute("aria-expanded", "false");
     btn.addEventListener("click", e => {
       e.stopPropagation();
       const item = btn.parentElement;
       const wasOpen = item.classList.contains("open");
-      document.querySelectorAll(".has-dropdown.open").forEach(i => i.classList.remove("open"));
-      if (!wasOpen) item.classList.add("open");
+      document.querySelectorAll(".has-dropdown.open").forEach(i => {
+        i.classList.remove("open");
+        i.querySelector(".nav-drop-btn")?.setAttribute("aria-expanded", "false");
+      });
+      if (!wasOpen) {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      }
     });
   });
   document.addEventListener("click", () => {

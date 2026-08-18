@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   filterInput.addEventListener("input", render);
-  document.getElementById("btn-en").addEventListener("click", render);
-  document.getElementById("btn-es").addEventListener("click", render);
+  document.addEventListener("edl:lang", render);
   render();
 });

@@ -9,6 +9,7 @@ window.EDL_I18N = {
     "util.view": "View:",
     "util.desktop": "Desktop",
     "util.mobile": "Mobile",
+    "util.skip": "Skip to main content",
 
     "nav.home": "Home",
     "nav.ourServices": "Our Services",
@@ -144,7 +145,7 @@ window.EDL_I18N = {
     "contact.email": "Email",
     "contact.address": "Address",
     "contact.hours": "Hours",
-    "contact.hoursVal": "Mon–Fri · (add your hours here)",
+    "contact.hoursVal": "Mon–Fri · 8:00 AM – 5:00 PM",
 
     "form.title": "Send us a message",
     "form.name": "Your name",
@@ -155,6 +156,8 @@ window.EDL_I18N = {
     "form.message": "Message",
     "form.messagePh": "Tell us about your case or question…",
     "form.send": "Send Message",
+    "form.captcha": "Spam check — what is {a} + {b}?",
+    "form.captchaErr": "Wrong answer to the spam check. Please try again.",
     "form.note": "This form opens your email app for now — it can be connected to a mail service later.",
 
     "fcta.title": "Ready to send your first case?",
@@ -303,6 +306,7 @@ window.EDL_I18N = {
     "util.view": "Vista:",
     "util.desktop": "Escritorio",
     "util.mobile": "Móvil",
+    "util.skip": "Saltar al contenido principal",
 
     "nav.home": "Inicio",
     "nav.ourServices": "Nuestros Servicios",
@@ -438,7 +442,7 @@ window.EDL_I18N = {
     "contact.email": "Correo",
     "contact.address": "Dirección",
     "contact.hours": "Horario",
-    "contact.hoursVal": "Lun–Vie · (agregue su horario aquí)",
+    "contact.hoursVal": "Lun–Vie · 8:00 AM – 5:00 PM",
 
     "form.title": "Envíenos un mensaje",
     "form.name": "Su nombre",
@@ -449,6 +453,8 @@ window.EDL_I18N = {
     "form.message": "Mensaje",
     "form.messagePh": "Cuéntenos sobre su caso o pregunta…",
     "form.send": "Enviar Mensaje",
+    "form.captcha": "Verificación anti-spam: ¿cuánto es {a} + {b}?",
+    "form.captchaErr": "Respuesta incorrecta a la verificación. Inténtelo de nuevo.",
     "form.note": "Por ahora este formulario abre su aplicación de correo — más adelante puede conectarse a un servicio de correo.",
 
     "fcta.title": "¿Listo para enviar su primer caso?",
@@ -591,12 +597,311 @@ window.EDL_I18N = {
     "status.In Production": "En Producción",
     "status.Quality Check": "Control de Calidad",
     "status.Shipped": "Enviado"
+  },
+
+  de: {
+    "util.view": "Ansicht:",
+    "util.desktop": "Desktop",
+    "util.mobile": "Mobil",
+    "util.skip": "Zum Hauptinhalt springen",
+
+    "nav.home": "Startseite",
+    "nav.ourServices": "Unsere Leistungen",
+    "nav.svcCrowns": "Brücken, Kronen & Veneers",
+    "nav.svcImplants": "Implantatversorgungen",
+    "nav.svcHybrid": "Zirkon-Hybridprothesen",
+    "nav.svcDentures": "Prothesen",
+    "nav.svcGuards": "Aufbissschienen & Löffel",
+    "nav.pricing": "Preise",
+    "nav.learning": "Wissen",
+    "nav.articles": "Artikel",
+    "nav.guides": "Anleitungen",
+    "nav.about": "Über uns",
+    "nav.services": "Leistungen",
+    "nav.work": "Unsere Arbeit",
+    "nav.send": "Fall einsenden",
+    "nav.faq": "FAQ",
+    "nav.contact": "Kontakt",
+    "nav.tracking": "Fallverfolgung",
+    "nav.login": "Anmelden",
+    "nav.logout": "Abmelden",
+    "nav.cta": "Fall starten",
+
+    "hero.eyebrow": "Digitales Dentallabor mit Komplettservice · Cockeysville, MD",
+    "hero.title": "Präzise Restaurationen. Digital entworfen, von Hand vollendet.",
+    "hero.sub": "Seit über 25 Jahren arbeitet Elite Dental Lab mit Zahnärzten zusammen, um gesunde, natürlich wirkende Lächeln wiederherzustellen. Jeder Fall wird unter einem Dach gescannt, designt, gefräst und geschichtet — mit Stolz hergestellt in den USA.",
+    "hero.cta1": "Fall einsenden",
+    "hero.cta2": "Leistungen ansehen",
+    "hero.point1": "Komplette Fertigung im eigenen Haus",
+    "hero.point2": "Ausschließlich FDA-zugelassene Materialien",
+    "hero.point3": "Alle gängigen Scanner & Implantatsysteme unterstützt",
+    "hero.badgeTop": "Made in USA",
+    "hero.badgeBottom": "Alle Endprodukte",
+
+    "ph.heroMedia": "Hier kommt Ihr Bild oder Video hin",
+    "ph.photo": "Platzhalter für Foto",
+    "ph.case": "Fallfoto",
+    "ph.quote": "Hier steht später ein echtes Zitat eines Ihrer Zahnärzte.",
+    "ph.docName": "Name des Zahnarztes",
+    "ph.docPractice": "Name der Praxis, Stadt",
+    "ph.map": "Platzhalter für Karte",
+    "ph.pageMedia": "Platzhalter für Bild oder Video",
+
+    "stats.years": "Jahre Erfahrung",
+    "stats.inhouse": "Fertigung im eigenen Haus",
+    "stats.usaNum": "USA",
+    "stats.usa": "Alle Produkte hergestellt in Amerika",
+    "stats.fdaNum": "FDA",
+    "stats.fda": "Nur zugelassene Materialien",
+
+    "about.eyebrow": "Warum Elite",
+    "about.title": "Zahntechnik ohne Kompromisse",
+    "about.sub": "In unserem Labor arbeiten moderne digitale Technik und traditionelles Handwerk zusammen — für passgenaue, ästhetische Ergebnisse und ein Team, das Ihre Patienten wie die eigenen behandelt.",
+    "about.c1t": "Alles unter einem Dach",
+    "about.c1p": "Scannen, Design, Fräsen und Keramikschichtung erfolgen komplett in unserem eigenen Betrieb. Keine Fremdvergabe bedeutet strengere Qualitätskontrolle und verlässliche Lieferzeiten.",
+    "about.c2t": "Ein durchgehend digitaler Workflow",
+    "about.c2p": "Wir akzeptieren Dateien aller gängigen Intraoralscanner und designen jeden Fall in 3Shape — schnell, präzise und ohne Nacharbeiten.",
+    "about.c3t": "Nur bewährte Materialien",
+    "about.c3p": "Wir arbeiten ausschließlich mit FDA-zugelassenen Materialien namhafter Hersteller — jede Restauration ist so sicher und langlebig wie schön.",
+    "about.c4t": "Ein Partner, nicht nur ein Labor",
+    "about.c4p": "Von der Fallplanung bis zur individuellen Farbbestimmung: Unsere Techniker besprechen Ihre Fälle gern persönlich mit Ihnen.",
+
+    "services.eyebrow": "Was wir fertigen",
+    "services.title": "Das komplette Spektrum an Restaurationen",
+    "services.sub": "Von der Einzelkrone bis zur implantatgetragenen Vollversorgung — alles mit derselben Sorgfalt für Passform, Funktion und Ästhetik.",
+    "services.tabFixed": "Festsitzend",
+    "services.tabRemovable": "Herausnehmbar",
+    "services.tabSupport": "Laborleistungen",
+
+    "svc.crowns.t": "Kronen, Brücken & Veneers",
+    "svc.crowns.1": "Zirkon, E-MAX, VMK und Vollguss",
+    "svc.crowns.2": "Minimal- und Non-Prep-Veneers",
+    "svc.crowns.3": "PFZ mit vestibulärer Keramikverblendung",
+    "svc.crowns.4": "3D-gedruckte oder PMMA-Provisorien",
+    "svc.implants.t": "Implantatversorgungen",
+    "svc.implants.1": "Individuelle Abutments: Titan, Zirkon, Chrom-Kobalt",
+    "svc.implants.2": "Verschraubte Kronen und Brücken",
+    "svc.implants.3": "Kompatibel mit allen gängigen Implantatsystemen",
+    "svc.hybrid.t": "Zirkon-Hybridprothesen",
+    "svc.hybrid.1": "Ganzer Kiefer: All-on-4, All-on-5 und All-on-6",
+    "svc.hybrid.2": "Monolithische Zirkonfestigkeit mit natürlicher Ästhetik",
+    "svc.dentures.t": "Prothesen",
+    "svc.dentures.1": "Voll- und Teilprothesen aus Acryl",
+    "svc.dentures.2": "Modellgussprothesen",
+    "svc.dentures.3": "Flippers und Übergangsversorgungen",
+    "svc.dentures.4": "3D-gedruckte Vollprothesen",
+    "svc.guards.t": "Aufbissschienen & Löffel",
+    "svc.guards.1": "Weiche und harte tiefgezogene Knirschschienen",
+    "svc.guards.2": "3D-gedruckte Schienen",
+    "svc.guards.3": "Individuelle Löffel aus Acryl und 3D-Druck",
+    "svc.design.t": "Design & Fräsen",
+    "svc.design.1": "Digitale Designleistungen in 3Shape",
+    "svc.design.2": "Zirkon- und PMMA-Fräsen",
+    "svc.consult.t": "Fallunterstützung",
+    "svc.consult.1": "Beratung zur Fallplanung",
+    "svc.consult.2": "Individuelle Farbbestimmung",
+
+    "send.eyebrow": "Der Einstieg ist einfach",
+    "send.title": "Senden Sie uns einen Fall in drei einfachen Schritten",
+    "send.s1t": "Scannen oder Abdruck nehmen",
+    "send.s1p": "Senden Sie digitale Dateien direkt von Ihrem Scanner — 3Shape Trios, iTero, Carestream, 3M True Definition, Sirona Cerec Connect oder PlanScan E4D — oder nehmen Sie einen klassischen Abdruck.",
+    "send.s2t": "RX-Formular beilegen",
+    "send.s2p": "Füllen Sie unser Auftragsformular mit den Falldetails und Ihren Wünschen aus, damit unsere Techniker alles Nötige haben.",
+    "send.s2link": "RX-Formular herunterladen →",
+    "send.s3t": "Versenden — per Post oder digital",
+    "send.s3p": "Physische Fälle können Sie mit jedem Versanddienst schicken — oder Sie fordern ein Versandetikett bei uns an und wir kümmern uns darum.",
+    "send.s3link": "Versandetikett anfordern →",
+
+    "work.eyebrow": "Unsere Arbeit",
+    "work.title": "Ergebnisse, auf die wir stolz sind",
+    "work.sub": "Eine Auswahl aktueller Fälle aus unserem Labor. Fotos folgen in Kürze.",
+
+    "testi.eyebrow": "Was Zahnärzte sagen",
+    "testi.title": "Das Vertrauen von Praxen in ganz Maryland",
+
+    "faq.title": "Häufig gestellte Fragen",
+    "faq.q1": "Wo wird Ihre Arbeit gefertigt?",
+    "faq.a1": "Alles entsteht in unserem eigenen Betrieb in Cockeysville, Maryland. Scannen, Design, Fräsen und Keramikschichtung erfolgen im Haus, und jedes Endprodukt ist in den USA gefertigt.",
+    "faq.q2": "Von welchen Intraoralscannern akzeptieren Sie Dateien?",
+    "faq.a2": "Wir akzeptieren digitale Scans von 3Shape Trios, iTero, Carestream, 3M True Definition, Sirona Cerec Connect und PlanScan E4D. Sie nutzen ein anderes System? Kontaktieren Sie uns — meist finden wir einen Weg.",
+    "faq.q3": "Welche Materialien verwenden Sie?",
+    "faq.a3": "Wir verwenden ausschließlich FDA-zugelassene Materialien namhafter Hersteller, darunter Zirkon, E-MAX, VMK-Legierungen, Titan und hochwertige Kunststoffe.",
+    "faq.q4": "Können Sie mir bei der Planung eines komplexen Falls helfen?",
+    "faq.a4": "Selbstverständlich. Wir bieten Fallplanungsberatung und individuelle Farbbestimmung an. Rufen Sie uns an — einer unserer Techniker geht den Fall mit Ihnen durch.",
+    "faq.q5": "Wie fange ich an?",
+    "faq.a5": "Senden Sie uns einfach Ihren ersten Fall — digital von Ihrem Scanner oder per Post — zusammen mit einem ausgefüllten RX-Formular. Oder rufen Sie uns unter 410-667-7773 an und wir richten alles für Sie ein.",
+
+    "contact.eyebrow": "Kontakt",
+    "contact.title": "Arbeiten wir zusammen",
+    "contact.sub": "Fragen zu einem Fall, zu Materialien oder Lieferzeiten? Wir freuen uns auf Ihre Nachricht.",
+    "contact.phone": "Telefon",
+    "contact.fax": "Fax",
+    "contact.email": "E-Mail",
+    "contact.address": "Adresse",
+    "contact.hours": "Öffnungszeiten",
+    "contact.hoursVal": "Mo–Fr · 8:00 – 17:00 Uhr",
+
+    "form.title": "Schreiben Sie uns",
+    "form.name": "Ihr Name",
+    "form.namePh": "Dr. Max Mustermann",
+    "form.practice": "Name der Praxis",
+    "form.practicePh": "Praxis Lächeln",
+    "form.email": "E-Mail",
+    "form.message": "Nachricht",
+    "form.messagePh": "Erzählen Sie uns von Ihrem Fall oder Ihrer Frage…",
+    "form.send": "Nachricht senden",
+    "form.captcha": "Spam-Schutz: Wie viel ist {a} + {b}?",
+    "form.captchaErr": "Falsche Antwort beim Spam-Schutz. Bitte erneut versuchen.",
+    "form.note": "Dieses Formular öffnet vorerst Ihr E-Mail-Programm — später kann es an einen Mail-Dienst angebunden werden.",
+
+    "fcta.title": "Bereit, Ihren ersten Fall einzusenden?",
+    "fcta.sub": "Erleben Sie den Unterschied eines Labors, das jede Restauration behandelt, als wäre sie für den eigenen Mund.",
+    "fcta.btn": "Fall einsenden",
+
+    "footer.tagline": "Hochwertige Zahntechnik mit den besten digitalen Lösungen — in Cockeysville, Maryland, vom ersten Tag an.",
+    "footer.company": "Unternehmen",
+    "footer.services": "Leistungen",
+    "footer.learning": "Wissen",
+    "footer.contact": "Kontakt",
+    "footer.rights": "© 2026 Elite Dental Lab. Alle Rechte vorbehalten.",
+    "footer.usa": "Alle Endprodukte mit Stolz hergestellt in den USA 🇺🇸",
+
+    "pg.backHome": "← Zurück zur Startseite",
+    "pg.ctaTitle": "Bereit, einen Fall einzusenden?",
+    "pg.ctaSub": "Rufen Sie uns an unter 410-667-7773 oder senden Sie noch heute Ihren ersten Fall.",
+    "pg.whatWeOffer": "Unser Angebot",
+    "pg.materials": "Materialien & Optionen",
+    "pg.turnaround": "Lieferzeit",
+    "pg.turnaroundVal": "Details zu Standardlieferzeiten folgen in Kürze — rufen Sie uns für aktuelle Zeiten an.",
+    "pg.caseCaption": "Echter Fall aus unserem Labor",
+
+    "pg.crowns.title": "Brücken, Kronen & Veneers",
+    "pg.crowns.sub": "Von der Einzelkrone bis zur Komplettsanierung — gefertigt für Passform, Funktion und natürliche Ästhetik.",
+    "pg.crowns.p1": "Unsere Kronen- und Brückenarbeiten verbinden digitale Präzision mit handwerklicher Vollendung. Jede Restauration wird in 3Shape designt, im Haus gefräst und von erfahrenen Keramikern fertiggestellt.",
+    "pg.crowns.li1": "Zirkon",
+    "pg.crowns.li2": "Minimal- und Non-Prep-Veneers",
+    "pg.crowns.li3": "PFZ / vestibulär reduziert mit Keramik",
+    "pg.crowns.li4": "E-MAX — alle Produkte",
+    "pg.crowns.li5": "VMK — SLM NP / Edelmetall / Hochedelmetall",
+    "pg.crowns.li6": "Vollguss — NP / Edelmetall / Gold",
+    "pg.crowns.li7": "3D-gedruckte oder PMMA-Provisorien",
+
+    "pg.implants.title": "Implantatversorgungen",
+    "pg.implants.sub": "Präzise Implantatlösungen für jedes gängige System — von der Einzelkrone bis zum ganzen Kiefer.",
+    "pg.implants.p1": "Von individuellen Abutments bis zu verschraubten Restaurationen liefert unsere Implantatabteilung spannungsfreie Passungen und vorhersagbare Ergebnisse — Fall für Fall.",
+    "pg.implants.li1": "Individuelle Abutments — Titan / Zirkon / Chrom-Kobalt",
+    "pg.implants.li2": "Verschraubte Kronen und Brücken",
+    "pg.implants.li3": "Wir versorgen ALLE gängigen Implantatmarken!",
+
+    "pg.hybrid.title": "Zirkon-Hybridprothesen",
+    "pg.hybrid.sub": "Aus Zirkon gefertigt — diese Hybridprothesen sehen am natürlichsten aus!",
+    "pg.hybrid.p1": "Zirkon-Hybridversorgungen für den ganzen Kiefer verbinden monolithische Festigkeit mit natürlicher Ästhetik — eine festsitzende Lösung, mit der Ihre Patienten selbstbewusst lächeln können.",
+    "pg.hybrid.li1": "All on 4",
+    "pg.hybrid.li2": "All on 5",
+    "pg.hybrid.li3": "All on 6",
+
+    "pg.dentures.title": "Prothesen",
+    "pg.dentures.sub": "Komfortable, natürlich wirkende herausnehmbare Versorgungen — vom Flipper bis zur 3D-gedruckten Vollprothese.",
+    "pg.dentures.p1": "Ob Ihr Patient einen Sofort-Flipper oder eine definitive Vollprothese braucht — wir fertigen herausnehmbaren Zahnersatz, der vom ersten Tag an bequem sitzt und natürlich aussieht.",
+    "pg.dentures.li1": "Flippers",
+    "pg.dentures.li2": "Modellgussprothesen",
+    "pg.dentures.li3": "Teilprothesen aus Acryl",
+    "pg.dentures.li4": "Vollprothesen aus Acryl",
+    "pg.dentures.li5": "3D-gedruckte Vollprothesen",
+
+    "pg.guards.title": "Aufbissschienen & Löffel",
+    "pg.guards.sub": "Schutzschienen, die Patienten gern tragen — komfortabel, langlebig und präzise.",
+    "pg.guards.p1": "Vom Bruxismus-Schutz bis zum individuellen Löffel: Unsere herausnehmbaren Apparaturen sitzen präzise und halten lange.",
+    "pg.guards.li1": "Weiche tiefgezogene Schienen",
+    "pg.guards.li2": "Weiche und harte tiefgezogene Schienen",
+    "pg.guards.li3": "Harte 3D-gedruckte Schienen",
+    "pg.guards.li4": "Individuelle Acryl-Löffel",
+    "pg.guards.li5": "3D-gedruckte individuelle Löffel",
+
+    "pg.pricing.title": "Preise",
+    "pg.pricing.sub": "Transparente Laborpreise ohne Überraschungen. Die vollständige Preisliste folgt in Kürze.",
+    "pg.pricing.colService": "Leistung",
+    "pg.pricing.colMaterial": "Material / Option",
+    "pg.pricing.colPrice": "Preis",
+    "pg.pricing.tbd": "Preis auf Anfrage",
+    "pg.pricing.note": "Die Preise werden hier bald veröffentlicht. Für eine vollständige, aktuelle Preisliste rufen Sie uns unter 410-667-7773 an oder schreiben Sie uns.",
+    "pg.pricing.cta": "Vollständige Preisliste anfordern",
+
+    "pg.articles.title": "Artikel",
+    "pg.articles.sub": "Neuigkeiten, Fallstudien und klinische Einblicke aus unserem Labor. Erste Artikel folgen in Kürze.",
+    "pg.guides.title": "Anleitungen",
+    "pg.guides.sub": "Schritt-für-Schritt-Anleitungen zu Präparation, Abformung, Scannen und der Zusammenarbeit mit unserem Labor. In Kürze verfügbar.",
+    "pg.learn.placeholder": "Inhalte folgen in Kürze",
+    "pg.learn.readMore": "Weiterlesen →",
+
+    "login.title": "Praxis-Login",
+    "login.sub": "Melden Sie sich an, um Ihre Fälle und deren aktuellen Status zu sehen.",
+    "login.user": "E-Mail",
+    "login.userPh": "sie@praxis.de",
+    "login.pass": "Passwort",
+    "login.btn": "Anmelden",
+    "login.error": "E-Mail oder Passwort falsch. Bitte versuchen Sie es erneut.",
+    "login.demoNote": "Demo-Konten (vorübergehend, bis das sichere Backend verbunden ist):",
+    "login.loggedInAs": "Sie sind angemeldet als",
+    "login.goTracking": "Zur Fallverfolgung →",
+    "login.registerLink": "Sie haben einen Registrierungscode? Konto erstellen →",
+
+    "reg.title": "Konto erstellen",
+    "reg.sub": "Die Registrierung erfolgt auf Einladung. Geben Sie den Code ein, den Elite Dental Lab Ihrer Praxis geschickt hat.",
+    "reg.code": "Registrierungscode",
+    "reg.codePh": "z. B. K7M2P9QX",
+    "reg.name": "Ihr Name / Ansprechpartner der Praxis",
+    "reg.namePh": "Dr. Max Mustermann",
+    "reg.email": "E-Mail",
+    "reg.pass": "Passwort",
+    "reg.pass2": "Passwort bestätigen",
+    "reg.btn": "Konto erstellen",
+    "reg.mismatch": "Die Passwörter stimmen nicht überein.",
+    "reg.badCode": "Dieser Registrierungscode ist ungültig oder wurde bereits verwendet. Kontaktieren Sie uns unter 410-667-7773.",
+    "reg.error": "Das Konto konnte nicht erstellt werden. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
+    "reg.needBackend": "Die Registrierung wird freigeschaltet, sobald das sichere Backend verbunden ist. Schauen Sie bald wieder vorbei oder rufen Sie uns unter 410-667-7773 an.",
+    "reg.success": "Konto erstellt! Sie werden zu Ihren Fällen weitergeleitet…",
+    "reg.confirmEmail": "Konto erstellt — bestätigen Sie Ihre E-Mail-Adresse über den Link in Ihrem Postfach und melden Sie sich dann an.",
+    "reg.haveAccount": "Sie haben bereits ein Konto? Anmelden →",
+
+    "track.title": "Fallverfolgung",
+    "track.sub": "Alle Fälle Ihrer Praxis und der aktuelle Stand jedes einzelnen in der Fertigung.",
+    "track.lockedTitle": "Bitte melden Sie sich an, um Fälle zu verfolgen",
+    "track.lockedSub": "Fallinformationen sind nur für registrierte Praxen verfügbar. Melden Sie sich an, um den Status Ihrer Fälle zu sehen.",
+    "track.lockedBtn": "Anmelden und fortfahren",
+    "track.myCases": "Ihre Fälle",
+    "track.filterPh": "Filtern nach Fallnummer, Zahn, Zahnarzt oder Restauration…",
+    "track.empty": "Noch keine Fälle vorhanden. Sobald wir Ihren ersten Fall erhalten, erscheint er hier.",
+    "track.noMatch": "Kein Fall entspricht diesem Filter.",
+    "track.office": "Praxis",
+    "track.caseId": "Fall-Nr.",
+    "track.type": "Restauration",
+    "track.tooth": "Zahn",
+    "track.received": "Eingegangen",
+    "track.due": "Voraussichtliche Fertigstellung",
+    "track.notes": "Anmerkungen",
+    "track.status": "Status",
+    "track.noPHI": "Dieses Portal enthält keine Patientendaten. Fälle werden ausschließlich über Labor-Fallnummer und Zahnnummer identifiziert.",
+
+    "status.Received": "Eingegangen",
+    "status.In Design": "Im Design",
+    "status.In Production": "In Fertigung",
+    "status.Quality Check": "Qualitätskontrolle",
+    "status.Shipped": "Versandt"
   }
 };
 
+window.EDL_LANGS = {
+  en: { flag: "🇺🇸", name: "English" },
+  es: { flag: "🇪🇸", name: "Español" },
+  de: { flag: "🇩🇪", name: "Deutsch" }
+};
+
 window.EDL_LANG = localStorage.getItem("edl-lang") || "en";
+if (!window.EDL_LANGS[window.EDL_LANG]) window.EDL_LANG = "en";
 
 window.edlApplyLanguage = function (lang) {
+  if (!window.EDL_LANGS[lang]) lang = "en";
   const dict = window.EDL_I18N[lang] || window.EDL_I18N.en;
   window.EDL_LANG = lang;
   document.documentElement.lang = lang;
@@ -608,11 +913,19 @@ window.edlApplyLanguage = function (lang) {
     const key = el.getAttribute("data-i18n-ph");
     if (dict[key]) el.setAttribute("placeholder", dict[key]);
   });
-  const en = document.getElementById("btn-en");
-  const es = document.getElementById("btn-es");
-  if (en) en.classList.toggle("active", lang === "en");
-  if (es) es.classList.toggle("active", lang === "es");
+
+  // Update the language dropdown in the utility bar
+  const current = document.getElementById("lang-current");
+  if (current) {
+    const meta = window.EDL_LANGS[lang];
+    current.innerHTML = `<span class="lang-flag">${meta.flag}</span> ${meta.name} <span class="lang-caret">▾</span>`;
+  }
+  document.querySelectorAll(".lang-menu button").forEach(btn =>
+    btn.classList.toggle("active", btn.dataset.lang === lang)
+  );
+
   localStorage.setItem("edl-lang", lang);
+  document.dispatchEvent(new CustomEvent("edl:lang", { detail: { lang } }));
 };
 
 window.edlT = function (key) {
