@@ -237,10 +237,11 @@ window.EDL_I18N = {
 
     /* ---- Learning ---- */
     "pg.articles.title": "Articles",
-    "pg.articles.sub": "News, case studies and clinical insights from our lab. First articles coming soon.",
+    "pg.articles.sub": "Trusted reading on digital dentistry, materials and techniques — curated by our lab.",
     "pg.guides.title": "Guides",
-    "pg.guides.sub": "Step-by-step guides for preps, impressions, scanning and working with our lab. Coming soon.",
+    "pg.guides.sub": "Practical step-by-step guides for scanning, preps, impressions and shade — curated by our lab.",
     "pg.learn.placeholder": "Content coming soon",
+    "pg.learn.note": "These resources link to trusted external sites and are in English.",
     "pg.learn.readMore": "Read more →",
 
     /* ---- Login ---- */
@@ -534,10 +535,11 @@ window.EDL_I18N = {
 
     /* ---- Aprendizaje ---- */
     "pg.articles.title": "Artículos",
-    "pg.articles.sub": "Noticias, casos clínicos y consejos de nuestro laboratorio. Primeros artículos próximamente.",
+    "pg.articles.sub": "Lecturas confiables sobre odontología digital, materiales y técnicas — seleccionadas por nuestro laboratorio.",
     "pg.guides.title": "Guías",
-    "pg.guides.sub": "Guías paso a paso sobre preparaciones, impresiones, escaneo y cómo trabajar con nuestro laboratorio. Próximamente.",
+    "pg.guides.sub": "Guías prácticas paso a paso sobre escaneo, preparaciones, impresiones y toma de color — seleccionadas por nuestro laboratorio.",
     "pg.learn.placeholder": "Contenido próximamente",
+    "pg.learn.note": "Estos recursos enlazan a sitios externos de confianza y están en inglés.",
     "pg.learn.readMore": "Leer más →",
 
     /* ---- Inicio de sesión ---- */
@@ -828,10 +830,11 @@ window.EDL_I18N = {
     "pg.pricing.cta": "Vollständige Preisliste anfordern",
 
     "pg.articles.title": "Artikel",
-    "pg.articles.sub": "Neuigkeiten, Fallstudien und klinische Einblicke aus unserem Labor. Erste Artikel folgen in Kürze.",
+    "pg.articles.sub": "Vertrauenswürdige Lektüre zu digitaler Zahnmedizin, Materialien und Techniken — ausgewählt von unserem Labor.",
     "pg.guides.title": "Anleitungen",
-    "pg.guides.sub": "Schritt-für-Schritt-Anleitungen zu Präparation, Abformung, Scannen und der Zusammenarbeit mit unserem Labor. In Kürze verfügbar.",
+    "pg.guides.sub": "Praktische Schritt-für-Schritt-Anleitungen zu Scannen, Präparation, Abformung und Farbbestimmung — ausgewählt von unserem Labor.",
     "pg.learn.placeholder": "Inhalte folgen in Kürze",
+    "pg.learn.note": "Diese Ressourcen verlinken auf vertrauenswürdige externe Seiten und sind auf Englisch.",
     "pg.learn.readMore": "Weiterlesen →",
 
     "login.title": "Praxis-Login",

@@ -598,6 +598,66 @@ html:not(.m) .has-dropdown:hover .dropdown { display: block; }
 .page-cta { text-align: center; }
 .page-cta .btn { margin-top: 22px; }
 
+/* ---------- Service page: compact text, large photos ---------- */
+.page-hero-compact { padding: 42px 0 6px; }
+.service-body { padding: 26px 0 72px; }
+.service-text {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  margin-bottom: 36px;
+}
+.service-intro > p:first-child { font-size: 1.05rem; color: var(--ink-soft); }
+.service-intro h3 { margin: 24px 0 8px; }
+.service-intro > p:last-child { color: var(--ink-soft); font-size: 0.95rem; }
+.service-offer h3 { margin-bottom: 12px; }
+.service-wide {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.gallery-2up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.gallery-2up .case-photo img { width: 100%; height: auto; }
+.gallery-solo { max-width: 980px; margin: 0 auto; }
+.gallery-solo img { width: 100%; height: auto; }
+.service-wide .carousel { max-width: 980px; margin: 0 auto; }
+.service-wide .carousel-track img { aspect-ratio: 16 / 11; }
+html.m .service-text { grid-template-columns: 1fr; gap: 24px; }
+html.m .gallery-2up { grid-template-columns: 1fr; }
+
+/* ---------- Learning resource cards ---------- */
+.learn-note { text-align: center; margin: -28px auto 36px; }
+.resource {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.resource:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(30, 44, 56, 0.16);
+}
+.resource h3 { font-size: 1.02rem; margin: 0; }
+.resource p { color: var(--ink-soft); font-size: 0.88rem; flex: 1; }
+.resource .text-link { margin-top: 0; }
+.source-pill {
+  align-self: flex-start;
+  background: var(--bg-alt);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
 /* ---------- Pricing table ---------- */
 .table-wrap { overflow-x: auto; }
 .price-table {
