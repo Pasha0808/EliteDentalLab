@@ -70,6 +70,7 @@
           </div>
         </div>
         <a href="${B}index.html#contact" data-i18n="nav.contact">Contact</a>
+        <a href="${B}about.html" data-i18n="nav.about">About Us</a>
       </nav>
       <div class="header-actions">
         <a class="btn btn-track" href="${B}case-tracking.html" data-i18n="nav.tracking">Case Tracking</a>
@@ -99,7 +100,7 @@
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.company">Company</h4>
-        <a href="${B}index.html#about" data-i18n="nav.about">About</a>
+        <a href="${B}about.html" data-i18n="nav.about">About Us</a>
         <a href="${B}pricing.html" data-i18n="nav.pricing">Pricing</a>
         <a href="${B}case-tracking.html" data-i18n="nav.tracking">Case Tracking</a>
         <a href="${B}index.html#contact" data-i18n="nav.contact">Contact</a>
@@ -257,6 +258,9 @@
     const slides = track.children.length;
     if (slides < 2) return;
     let index = 0;
+
+    // Preload every slide so switching photos never shows a blank frame
+    track.querySelectorAll('img[loading="lazy"]').forEach(img => (img.loading = "eager"));
 
     const dotsWrap = document.createElement("div");
     dotsWrap.className = "carousel-dots";
