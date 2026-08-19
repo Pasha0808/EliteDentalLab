@@ -51,7 +51,7 @@ create table public.cases (
   received    date not null default current_date,
   due         date,
   status      text not null default 'Received'
-              check (status in ('Received', 'In Design', 'In Production', 'Quality Check', 'Shipped')),
+              check (status in ('Received', 'In Design', 'In Production', 'Quality Check', 'Shipped', 'Delivered')),
   notes       text,
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()

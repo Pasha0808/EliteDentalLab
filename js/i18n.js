@@ -317,7 +317,8 @@ window.EDL_I18N = {
     "status.In Design": "In Design",
     "status.In Production": "In Production",
     "status.Quality Check": "Quality Check",
-    "status.Shipped": "Shipped"
+    "status.Shipped": "Shipped",
+    "status.Delivered": "Delivered"
   },
 
   es: {
@@ -632,7 +633,8 @@ window.EDL_I18N = {
     "status.In Design": "En Diseño",
     "status.In Production": "En Producción",
     "status.Quality Check": "Control de Calidad",
-    "status.Shipped": "Enviado"
+    "status.Shipped": "Enviado",
+    "status.Delivered": "Entregado"
   },
 
   de: {
@@ -941,7 +943,8 @@ window.EDL_I18N = {
     "status.In Design": "Im Design",
     "status.In Production": "In Fertigung",
     "status.Quality Check": "Qualitätskontrolle",
-    "status.Shipped": "Versandt"
+    "status.Shipped": "Versandt",
+    "status.Delivered": "Zugestellt"
   }
 };
 

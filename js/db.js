@@ -42,7 +42,7 @@ window.EDL_DB = {
     }
   ],
 
-  statuses: ["Received", "In Design", "In Production", "Quality Check", "Shipped"],
+  statuses: ["Received", "In Design", "In Production", "Quality Check", "Shipped", "Delivered"],
 
   restorations: [
     "Zirconia Crown", "E-MAX Crown", "PFM Crown", "Bridge", "Veneer",

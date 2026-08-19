@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function statusBadge(status) {
     const idx = STATUSES.indexOf(status);
-    const cls = ["st-received", "st-design", "st-production", "st-quality", "st-shipped"][idx] || "st-received";
+    const cls = ["st-received", "st-design", "st-production", "st-quality", "st-shipped", "st-delivered"][idx] || "st-received";
     return `<span class="status-badge ${cls}">${window.edlT("status." + status)}</span>`;
   }
 
