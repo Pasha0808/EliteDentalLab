@@ -71,6 +71,7 @@
         </div>
         <a href="${B}index.html#contact" data-i18n="nav.contact">Contact</a>
         <a href="${B}about.html" data-i18n="nav.about">About Us</a>
+        <a class="nav-auth-link" id="nav-auth-link" href="${B}login.html" data-i18n="nav.login">Log In</a>
       </nav>
       <div class="header-actions">
         <a class="btn btn-track" href="${B}case-tracking.html" data-i18n="nav.tracking">Case Tracking</a>
@@ -150,6 +151,12 @@
         ${adminLink}
         <span class="user-chip" title="${session.office_name || ""}">👤 ${session.name}</span>
         <a class="logout-link" href="#" id="logout-link" data-i18n="nav.logout">Log out</a>`;
+      const navAuth = document.getElementById("nav-auth-link");
+      if (navAuth) {
+        navAuth.textContent = window.edlT ? window.edlT("nav.logout") : "Log out";
+        navAuth.setAttribute("data-i18n", "nav.logout");
+        navAuth.href = B + "login.html?logout=1";
+      }
       document.getElementById("logout-link").addEventListener("click", e => {
         e.preventDefault();
         window.EDL_AUTH.clearLocal();
