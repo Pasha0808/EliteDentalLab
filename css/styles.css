@@ -128,10 +128,29 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .logo-img { height: 46px; width: auto; border-radius: 8px; display: block; }
 .logo-text { font-size: 1.65rem; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; }
 .logo-text em { font-style: normal; color: var(--accent); }
-.main-nav { display: flex; gap: 26px; }
-.main-nav a { color: var(--ink); font-weight: 600; font-size: 0.95rem; }
+.main-nav { display: flex; gap: 22px; align-items: center; flex-shrink: 0; }
+.main-nav a {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;      /* never break "About Us" onto two lines */
+}
 .main-nav a:hover { color: var(--accent); }
-.header-actions { display: flex; align-items: center; gap: 12px; }
+.header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
+/* Signed-in header carries more (Admin, name, Log out): keep it on one line */
+.user-chip {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 1400px) {
+  html:not(.m) .main-nav { gap: 16px; }
+  html:not(.m) .main-nav a,
+  html:not(.m) .nav-drop-btn { font-size: 0.9rem; }
+  html:not(.m) .user-chip { max-width: 110px; }
+  html:not(.m) .header-inner { gap: 14px; }
+}
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
 .nav-toggle span { display: block; width: 24px; height: 3px; background: var(--ink); margin: 5px 0; border-radius: 2px; }
 
@@ -474,6 +493,7 @@ html.m .utility-phone { order: -1; width: 100%; text-align: center; }
   font: inherit;
   font-weight: 600;
   font-size: 0.95rem;
+  white-space: nowrap;
   color: var(--ink);
   cursor: pointer;
   display: inline-flex;
