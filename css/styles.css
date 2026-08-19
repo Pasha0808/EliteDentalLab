@@ -297,6 +297,8 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   gap: 16px;
 }
 .testi-body figcaption { display: block; font-size: 0.95rem; }
+.testi-body figcaption strong { display: block; white-space: nowrap; }
+.testi-body figcaption small { display: block; margin-top: 2px; }
 .testi-body figcaption small { color: var(--ink-soft); }
 html.m .testi-card-lg { grid-template-columns: 1fr; }
 html.m .testi-photo-lg { min-height: 0; aspect-ratio: 16 / 11; }
@@ -1102,8 +1104,8 @@ textarea:focus-visible, select:focus-visible, summary:focus-visible {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -12%;
-  width: 112%;
+  left: -6%;
+  width: 106%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
