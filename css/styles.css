@@ -123,17 +123,10 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   padding-top: 14px;
   padding-bottom: 14px;
 }
-.logo { display: flex; align-items: center; gap: 12px; color: var(--ink); min-width: 0; }
+.logo { display: flex; align-items: center; gap: 12px; color: var(--ink); flex-shrink: 0; }
 .logo-mark { color: var(--accent); display: flex; }
 .logo-img { height: 46px; width: auto; border-radius: 8px; display: block; }
-.logo-text {
-  font-size: 1.65rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+.logo-text { font-size: 1.65rem; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; }
 .logo-text em { font-style: normal; color: var(--accent); }
 .main-nav { display: flex; gap: 22px; align-items: center; flex-shrink: 0; }
 .main-nav a {
@@ -151,12 +144,34 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* Compact desktop header — everything except the brand gets smaller so
+   "Elite Dental Lab" always shows in full, even signed in. */
 @media (max-width: 1400px) {
-  html:not(.m) .main-nav { gap: 16px; }
+  html:not(.m) .header-inner { gap: 16px; }
+  html:not(.m) .logo { gap: 10px; }
+  html:not(.m) .logo-img { height: 40px; }
+  html:not(.m) .logo-text { font-size: 1.42rem; }
+
+  html:not(.m) .main-nav { gap: 15px; }
   html:not(.m) .main-nav a,
-  html:not(.m) .nav-drop-btn { font-size: 0.9rem; }
-  html:not(.m) .user-chip { max-width: 110px; }
-  html:not(.m) .header-inner { gap: 14px; }
+  html:not(.m) .nav-drop-btn { font-size: 0.87rem; }
+
+  html:not(.m) .header-actions { gap: 8px; }
+  html:not(.m) .btn-track { padding: 8px 14px; font-size: 0.82rem; }
+  html:not(.m) .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+  html:not(.m) .user-chip { max-width: 120px; font-size: 0.8rem; }
+  html:not(.m) .logout-link { font-size: 0.76rem; margin-left: 2px; }
+}
+
+/* Tighter still on narrow laptops */
+@media (max-width: 1180px) {
+  html:not(.m) .main-nav { gap: 12px; }
+  html:not(.m) .main-nav a,
+  html:not(.m) .nav-drop-btn { font-size: 0.83rem; }
+  html:not(.m) .logo-text { font-size: 1.3rem; }
+  html:not(.m) .logo-img { height: 36px; }
+  html:not(.m) .btn-track { padding: 7px 12px; font-size: 0.78rem; }
+  html:not(.m) .user-chip { max-width: 95px; }
 }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
 .nav-toggle span { display: block; width: 24px; height: 3px; background: var(--ink); margin: 5px 0; border-radius: 2px; }
@@ -1257,5 +1272,5 @@ html.forced-mobile .page {
   border: 1px solid rgba(30, 44, 56, 0.15);
 }
 /* Desktop layout forced on a small screen: keep full-width grid, allow scroll */
-html.forced-desktop .page { min-width: 1260px; }
+html.forced-desktop .page { min-width: 1110px; }
 html.forced-desktop body { overflow-x: auto; }
