@@ -174,7 +174,7 @@
   /* Below this the full desktop header (logo + 6 nav items + Case Tracking +
      account controls) no longer fits on one line, so we switch to the
      hamburger menu instead of letting items wrap. */
-  const MOBILE_BREAKPOINT = 1150;
+  const MOBILE_BREAKPOINT = 1200;
   const mq = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
 
   function applyView() {
