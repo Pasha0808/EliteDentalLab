@@ -1007,6 +1007,18 @@ html.m .testi-grid-4 { grid-template-columns: 1fr; }
   border-radius: 8px;
   background: #fbf8f3;
 }
+.save-state {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.save-state.saving { color: var(--ink-soft); }
+.save-state.saved  { color: #1c7c3d; }
+.save-state.failed { color: #b3261e; }
+
 .big-code {
   font-size: 1.1rem;
   background: #fdefd0;

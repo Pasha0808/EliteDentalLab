@@ -39,6 +39,38 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   await refreshOffices();
 
+
+  /* ---------- Status-save feedback ---------- */
+
+  const statusError = document.getElementById("status-error");
+
+  function flagSave(sel, state) {
+    const el = sel.parentElement.querySelector(".save-state");
+    if (!el) return;
+    clearTimeout(el._timer);
+    el.className = "save-state " + state;
+    el.textContent = state === "saving" ? "saving…" : state === "saved" ? "Saved ✓" : "Not saved";
+    if (state === "saved") {
+      el._timer = setTimeout(() => {
+        el.textContent = "";
+        el.className = "save-state";
+      }, 2200);
+    }
+  }
+
+  function explainSaveError(err, attempted) {
+    const msg = (err && err.message) || "";
+    if (/check constraint|cases_status_check/i.test(msg)) {
+      return `The database does not accept "${attempted}" yet. Run ` +
+             `supabase/migration-add-delivered.sql in the Supabase SQL editor, then try again. ` +
+             `The case still shows its previous status.`;
+    }
+    if (/fetch|network|failed to fetch/i.test(msg)) {
+      return "Could not reach the database — check your connection (or whether the Supabase project is paused). The status was not changed.";
+    }
+    return "The status could not be saved: " + (msg || "unknown error") + ". The case still shows its previous status.";
+  }
+
   /* ---------- Case list with inline status updates ---------- */
 
   let cases = [];
@@ -71,14 +103,33 @@ document.addEventListener("DOMContentLoaded", async () => {
           <select class="status-select" data-id="${esc(c.id)}">
             ${STATUSES.map(s => `<option ${s === c.status ? "selected" : ""}>${s}</option>`).join("")}
           </select>
+          <span class="save-state" aria-live="polite"></span>
         </td>
       </tr>`).join("");
 
     tbody.querySelectorAll(".status-select").forEach(sel => {
       sel.addEventListener("change", async () => {
-        await window.EDL_API.updateCaseStatus(sel.dataset.id, sel.value);
-        const c = cases.find(x => String(x.id) === sel.dataset.id);
-        if (c) c.status = sel.value;
+        const id = sel.dataset.id;
+        const record = cases.find(x => String(x.id) === id);
+        const previous = record ? record.status : null;
+        const next = sel.value;
+
+        sel.disabled = true;
+        flagSave(sel, "saving");
+        try {
+          await window.EDL_API.updateCaseStatus(id, next);
+          if (record) record.status = next;
+          flagSave(sel, "saved");
+          statusError.hidden = true;
+        } catch (err) {
+          // Never leave the screen showing a status the database rejected
+          if (previous !== null) sel.value = previous;
+          flagSave(sel, "failed");
+          statusError.textContent = explainSaveError(err, next);
+          statusError.hidden = false;
+        } finally {
+          sel.disabled = false;
+        }
       });
     });
   }
