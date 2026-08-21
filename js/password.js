@@ -4,18 +4,19 @@
    registration pages.
 
    POLICY NOTE
-   Current guidance (NIST SP 800-63B) puts length first and warns that rigid
-   composition rules push people toward predictable passwords like
-   "Password1!". So the rules below are:
-     • at least 12 characters (hard minimum)
-     • variety required for shorter passwords, but a 16+ character
-       passphrase is accepted on its own
-     • common and site-related passwords rejected outright
+   These rules mirror what Supabase enforces server-side (Authentication →
+   Sign In / Providers → Email): at least 12 characters containing lower
+   case, upper case, a digit and a symbol. They must stay in step — if the
+   form accepted something the server rejects, people would see every rule
+   tick green and then get an error on submit.
+
+   Two extra checks run here only, because the server cannot make them:
+   common/site-related passwords, and passwords containing the account's
+   own name or email.
    ========================================================================== */
 
 (function () {
   const MIN_LENGTH = 12;
-  const PASSPHRASE_LENGTH = 16;   // long enough to stand without variety
   const MAX_LENGTH = 128;
 
   /* Passwords that appear at the top of every breach list, plus obvious
@@ -60,7 +61,7 @@
 
     const rules = {
       length:   pw.length >= MIN_LENGTH,
-      variety:  pw.length >= PASSPHRASE_LENGTH || variety >= 3,
+      variety:  variety === 4,          // server requires all four classes
       notCommon: !isCommon && !repeated && !sequential,
       notPersonal: personal.length === 0
     };
@@ -71,7 +72,7 @@
     let score = 0;
     if (pw.length >= 8) score++;
     if (pw.length >= MIN_LENGTH) score++;
-    if (pw.length >= PASSPHRASE_LENGTH) score++;
+    if (pw.length >= 16) score++;
     if (variety >= 3) score++;
     if (variety === 4) score++;
     if (!rules.notCommon || !rules.notPersonal) score = Math.min(score, 1);
@@ -138,7 +139,7 @@
 
     const labels = () => ({
       length: (window.edlT ? window.edlT("pw.ruleLength") : "At least 12 characters"),
-      variety: (window.edlT ? window.edlT("pw.ruleVariety") : "Mix of upper case, lower case, numbers or symbols (or 16+ characters)"),
+      variety: (window.edlT ? window.edlT("pw.ruleVariety") : "Contains upper case, lower case, a number and a symbol"),
       notCommon: (window.edlT ? window.edlT("pw.ruleCommon") : "Not a common or easily guessed password"),
       notPersonal: (window.edlT ? window.edlT("pw.rulePersonal") : "Does not contain your name or email")
     });
