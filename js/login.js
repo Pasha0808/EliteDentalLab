@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (note) note.hidden = true;
   }
 
+  // Let people check what they typed before submitting
+  const pwInput = document.querySelector('#login-form input[type="password"]');
+  if (pwInput && window.EDL_PW) window.EDL_PW.attachReveal(pwInput);
+
   const loginCard = document.getElementById("login-card");
   const loggedinCard = document.getElementById("loggedin-card");
   const session = await window.EDL_API.getSession();

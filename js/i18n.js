@@ -129,6 +129,8 @@ window.EDL_I18N = {
     "testi.q2": "Working with Elite feels like having a lab inside our own practice. Communication is easy, turnaround is dependable, and the quality never slips.",
     "testi.q3": "From single units to full-arch implant cases, the craftsmanship is outstanding. Shade matching is spot on, even on the difficult anterior cases.",
     "testi.q4": "A lab that truly cares about the outcome. Their team goes above and beyond on every case we send — I recommend them without hesitation.",
+    "testi.q5": "Elite makes my restorative appointments predictable. The margins are clean, the contacts are right, and chair time adjusting cases has dropped noticeably since we switched.",
+    "testi.q6": "What stands out is the consistency. Whether it is a single crown or a full case, the quality is the same every time, and they are always easy to reach when I have a question.",
 
     "about2.title": "About Us",
     "about2.sub": "A full-service dental laboratory in Cockeysville, Maryland — built on three decades of craftsmanship.",
@@ -275,6 +277,13 @@ window.EDL_I18N = {
     "login.registerLink": "Have a registration code? Create your account →",
 
     /* ---- Registration ---- */
+    "pw.show": "Show",
+    "pw.hide": "Hide",
+    "pw.ruleLength": "At least 12 characters",
+    "pw.ruleVariety": "Mix of upper case, lower case, numbers or symbols (or 16+ characters)",
+    "pw.ruleCommon": "Not a common or easily guessed password",
+    "pw.rulePersonal": "Does not contain your name or email",
+    "pw.tooWeak": "Please choose a stronger password — see the requirements below the field.",
     "reg.title": "Create Your Account",
     "reg.sub": "Registration is by invitation. Enter the code Elite Dental Lab sent to your office.",
     "reg.code": "Registration code",
@@ -445,6 +454,8 @@ window.EDL_I18N = {
     "testi.q2": "Trabajar con Elite es como tener un laboratorio dentro de nuestra propia clínica. La comunicación es fácil, los tiempos son confiables y la calidad nunca baja.",
     "testi.q3": "Desde unidades individuales hasta casos de implantes de arco completo, la artesanía es sobresaliente. La toma de color es exacta, incluso en los casos anteriores difíciles.",
     "testi.q4": "Un laboratorio al que realmente le importa el resultado. Su equipo se esfuerza al máximo en cada caso que enviamos — los recomiendo sin dudarlo.",
+    "testi.q5": "Elite hace que mis citas restauradoras sean predecibles. Los márgenes son limpios, los contactos son correctos, y el tiempo de sillón ajustando casos ha bajado notablemente desde que cambiamos.",
+    "testi.q6": "Lo que destaca es la consistencia. Ya sea una corona individual o un caso completo, la calidad es la misma siempre, y siempre son fáciles de contactar cuando tengo una pregunta.",
 
     "about2.title": "Nosotros",
     "about2.sub": "Un laboratorio dental de servicio completo en Cockeysville, Maryland — construido sobre tres décadas de artesanía.",
@@ -591,6 +602,13 @@ window.EDL_I18N = {
     "login.registerLink": "¿Tiene un código de registro? Cree su cuenta →",
 
     /* ---- Registro ---- */
+    "pw.show": "Mostrar",
+    "pw.hide": "Ocultar",
+    "pw.ruleLength": "Al menos 12 caracteres",
+    "pw.ruleVariety": "Combinación de mayúsculas, minúsculas, números o símbolos (o más de 16 caracteres)",
+    "pw.ruleCommon": "No es una contraseña común o fácil de adivinar",
+    "pw.rulePersonal": "No contiene su nombre ni su correo",
+    "pw.tooWeak": "Elija una contraseña más segura — vea los requisitos debajo del campo.",
     "reg.title": "Cree Su Cuenta",
     "reg.sub": "El registro es por invitación. Ingrese el código que Elite Dental Lab envió a su clínica.",
     "reg.code": "Código de registro",
@@ -761,6 +779,8 @@ window.EDL_I18N = {
     "testi.q2": "Mit Elite zu arbeiten fühlt sich an, als hätte man das Labor in der eigenen Praxis. Die Kommunikation ist unkompliziert, die Lieferzeiten verlässlich, die Qualität konstant hoch.",
     "testi.q3": "Von Einzelkronen bis zu Implantatfällen für den ganzen Kiefer — die Handwerkskunst ist herausragend. Die Farbbestimmung stimmt, selbst bei schwierigen Frontzahnfällen.",
     "testi.q4": "Ein Labor, dem das Ergebnis wirklich am Herzen liegt. Das Team gibt bei jedem Fall alles — ich empfehle sie ohne zu zögern.",
+    "testi.q5": "Elite macht meine restaurativen Termine planbar. Die Ränder sind sauber, die Kontaktpunkte stimmen, und die Stuhlzeit für Anpassungen ist seit dem Wechsel deutlich gesunken.",
+    "testi.q6": "Was heraussticht, ist die Beständigkeit. Ob Einzelkrone oder kompletter Fall — die Qualität ist jedes Mal gleich, und das Team ist immer gut erreichbar, wenn ich eine Frage habe.",
 
     "about2.title": "Über uns",
     "about2.sub": "Ein Dentallabor mit Komplettservice in Cockeysville, Maryland — aufgebaut auf drei Jahrzehnten Handwerkskunst.",
@@ -902,6 +922,13 @@ window.EDL_I18N = {
     "login.goTracking": "Zur Fallverfolgung →",
     "login.registerLink": "Sie haben einen Registrierungscode? Konto erstellen →",
 
+    "pw.show": "Anzeigen",
+    "pw.hide": "Verbergen",
+    "pw.ruleLength": "Mindestens 12 Zeichen",
+    "pw.ruleVariety": "Mischung aus Groß-, Kleinbuchstaben, Zahlen oder Symbolen (oder 16+ Zeichen)",
+    "pw.ruleCommon": "Kein gängiges oder leicht zu erratendes Passwort",
+    "pw.rulePersonal": "Enthält nicht Ihren Namen oder Ihre E-Mail-Adresse",
+    "pw.tooWeak": "Bitte wählen Sie ein stärkeres Passwort — siehe die Anforderungen unter dem Feld.",
     "reg.title": "Konto erstellen",
     "reg.sub": "Die Registrierung erfolgt auf Einladung. Geben Sie den Code ein, den Elite Dental Lab Ihrer Praxis geschickt hat.",
     "reg.code": "Registrierungscode",

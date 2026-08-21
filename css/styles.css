@@ -832,6 +832,58 @@ html.m .testi-grid-4 { grid-template-columns: 1fr; }
   color: var(--ink);
 }
 .auth-card input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+/* ---------- Password field: reveal toggle + strength ---------- */
+.pw-wrap { position: relative; display: block; }
+.pw-wrap input { width: 100%; padding-right: 68px; }
+.pw-reveal {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--accent-dark);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.pw-reveal:hover { background: var(--bg-alt); }
+
+.pw-strength { margin-top: 10px; }
+.pw-meter {
+  height: 5px;
+  background: #e8e1d6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.pw-meter span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+.pw-meter span.weak   { background: #c8452f; }
+.pw-meter span.fair   { background: #d98b1f; }
+.pw-meter span.good   { background: #4a9a45; }
+.pw-meter span.strong { background: #1c7c3d; }
+.pw-rules {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-align: left;
+}
+.pw-rules li.met   { color: #1c7c3d; font-weight: 600; }
+.pw-rules li.unmet { color: var(--ink-soft); }
+
 .login-error { color: #b3261e; font-size: 0.88rem; font-weight: 600; }
 .demo-note {
   margin-top: 26px;

@@ -16,12 +16,35 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Reveal toggles, plus live strength rules on the new password
+  const pw1 = form.querySelector('[name="password"]');
+  const pw2 = form.querySelector('[name="password2"]');
+  if (window.EDL_PW) {
+    window.EDL_PW.attachReveal(pw1);
+    window.EDL_PW.attachReveal(pw2);
+    window.EDL_PW.attachStrength(pw1, () => ({
+      email: form.email.value,
+      name: form.displayName.value
+    }));
+  }
+
   form.addEventListener("submit", async e => {
     e.preventDefault();
     errEl.hidden = true;
     okEl.hidden = true;
 
     const f = e.target;
+    if (window.EDL_PW) {
+      const check = window.EDL_PW.analyse(f.password.value, {
+        email: f.email.value, name: f.displayName.value
+      });
+      if (!check.ok) {
+        errEl.textContent = window.edlT("pw.tooWeak");
+        errEl.hidden = false;
+        f.password.focus();
+        return;
+      }
+    }
     if (f.password.value !== f.password2.value) {
       errEl.textContent = window.edlT("reg.mismatch");
       errEl.hidden = false;
