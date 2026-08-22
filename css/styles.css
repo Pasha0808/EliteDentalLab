@@ -319,38 +319,60 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 
 /* ---------- Testimonials ---------- */
 .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-/* Six testimonials: three across, two down */
-.testi-grid-4 { grid-template-columns: repeat(3, 1fr); gap: 26px; }
+/* Six testimonials: two across, three down, photo beside the quote.
+   The section runs wider than the page default so the cards stay large. */
+#testimonials .container { max-width: 1400px; }
+.testi-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 .testi-card-lg {
   padding: 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  position: relative;
+  min-height: 280px;
 }
+/* Taken out of flow so the photo fills the full card height — an image
+   will not stretch to a grid row sized by the text beside it. */
 .testi-photo-lg {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 270px;
+  height: 100%;
   object-fit: cover;
   object-position: center 20%;   /* keeps faces in frame when cropping */
 }
 .testi-body {
-  padding: 24px 22px;
+  grid-column: 2;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  gap: 14px;
+  justify-content: center;
+  gap: 16px;
 }
-.testi-card-lg blockquote { font-size: 0.93rem; }
-@media (max-width: 1080px) {
-  html:not(.m) .testi-grid-4 { grid-template-columns: repeat(2, 1fr); }
+/* Narrower windows: shrink the photo column before dropping to one column */
+@media (max-width: 1180px) {
+  html:not(.m) .testi-card-lg { grid-template-columns: 210px 1fr; }
+  html:not(.m) .testi-photo-lg { width: 210px; }
+  html:not(.m) .testi-body { padding: 24px 22px; }
+}
+@media (max-width: 960px) {
+  html:not(.m) .testi-grid-4 { grid-template-columns: 1fr; }
 }
 .testi-card .testi-body figcaption { display: block; font-size: 0.95rem; }
 .testi-card .testi-body figcaption strong { display: block; white-space: nowrap; }
 .testi-card .testi-body figcaption small { display: block; margin-top: 2px; color: var(--ink-soft); }
 .testi-body figcaption small { color: var(--ink-soft); }
 html.m .testi-grid-4 { grid-template-columns: 1fr; }
-html.m .testi-photo-lg { aspect-ratio: 16 / 11; }
+html.m .testi-card-lg { grid-template-columns: 1fr; min-height: 0; }
+html.m .testi-photo-lg {
+  position: static;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 11;
+}
+html.m .testi-body { grid-column: auto; padding: 24px 22px; }
 .testi-photo {
   width: 56px;
   height: 56px;
@@ -359,6 +381,7 @@ html.m .testi-photo-lg { aspect-ratio: 16 / 11; }
   flex-shrink: 0;
   border: 2px solid var(--accent-soft);
 }
+.testi-card.testi-card-lg { padding: 0; }   /* declared after .testi-card so it wins */
 .testi-card {
   background: var(--surface);
   border-radius: var(--radius);
