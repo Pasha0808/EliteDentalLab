@@ -144,6 +144,9 @@ window.EDL_I18N = {
     "about2.labP4": "Elite Dental Lab takes pride in using all the latest technologies and only FDA-approved materials.",
     "about2.labP5": "All procedures — scanning, design, milling, porcelain layering and more — are performed in-house, where a highly qualified and experienced team inspects every case to ensure full dentist and patient satisfaction.",
 
+    "svc.more": "More information →",
+    "faq.qTurn": "How long does a case take?",
+    "faq.aTurn": "Most cases are completed in under two weeks from the day they reach the lab. If you need something sooner, tell us when you send the case — we can often accommodate rush requests.",
    "faq.title": "Frequently asked questions",
     "faq.q1": "Where is your work made?",
     "faq.a1": "Everything is produced in our own facility in Cockeysville, Maryland. Scanning, design, milling and porcelain layering all happen in-house, and every final product is made in the USA.",
@@ -198,7 +201,7 @@ window.EDL_I18N = {
     "pg.whatWeOffer": "What we offer",
     "pg.materials": "Materials & options",
     "pg.turnaround": "Turnaround",
-    "pg.turnaroundVal": "Standard turnaround details coming soon — call us for current times.",
+    "pg.turnaroundVal": "Most cases are completed in under two weeks from the day they reach the lab. If you need something sooner, tell us when you send the case — we can often accommodate rush requests.",
     "pg.caseCaption": "Actual case from our lab",
 
     "pg.crowns.title": "Bridges & Crowns and Veneers",
@@ -469,6 +472,9 @@ window.EDL_I18N = {
     "about2.labP4": "Elite Dental Lab se enorgullece de usar las últimas tecnologías y únicamente materiales aprobados por la FDA.",
     "about2.labP5": "Todos los procedimientos — escaneo, diseño, fresado, estratificación de porcelana y más — se realizan internamente, donde un equipo altamente calificado y experimentado inspecciona cada caso para garantizar la plena satisfacción del dentista y del paciente.",
 
+    "svc.more": "Más información →",
+    "faq.qTurn": "¿Cuánto tarda un caso?",
+    "faq.aTurn": "La mayoría de los casos se completan en menos de dos semanas desde el día en que llegan al laboratorio. Si necesita algo antes, indíquenoslo al enviar el caso — con frecuencia podemos atender solicitudes urgentes.",
    "faq.title": "Preguntas frecuentes",
     "faq.q1": "¿Dónde se fabrica su trabajo?",
     "faq.a1": "Todo se produce en nuestras propias instalaciones en Cockeysville, Maryland. El escaneo, el diseño, el fresado y la estratificación de porcelana se realizan internamente, y cada producto final está hecho en EE. UU.",
@@ -523,7 +529,7 @@ window.EDL_I18N = {
     "pg.whatWeOffer": "Lo que ofrecemos",
     "pg.materials": "Materiales y opciones",
     "pg.turnaround": "Tiempo de entrega",
-    "pg.turnaroundVal": "Los detalles de tiempos de entrega estarán disponibles pronto — llámenos para conocer los tiempos actuales.",
+    "pg.turnaroundVal": "La mayoría de los casos se completan en menos de dos semanas desde el día en que llegan al laboratorio. Si necesita algo antes, indíquenoslo al enviar el caso — con frecuencia podemos atender solicitudes urgentes.",
     "pg.caseCaption": "Caso real de nuestro laboratorio",
 
     "pg.crowns.title": "Puentes, Coronas y Carillas",
@@ -794,6 +800,9 @@ window.EDL_I18N = {
     "about2.labP4": "Elite Dental Lab ist stolz darauf, mit den neuesten Technologien und ausschließlich FDA-zugelassenen Materialien zu arbeiten.",
     "about2.labP5": "Alle Arbeitsschritte — Scannen, Design, Fräsen, Keramikschichtung und mehr — erfolgen im eigenen Haus, wo ein hochqualifiziertes, erfahrenes Team jeden Fall prüft, um die volle Zufriedenheit von Zahnarzt und Patient sicherzustellen.",
 
+    "svc.more": "Mehr erfahren →",
+    "faq.qTurn": "Wie lange dauert ein Fall?",
+    "faq.aTurn": "Die meisten Fälle sind in weniger als zwei Wochen ab Eingang im Labor fertig. Wenn Sie es schneller brauchen, sagen Sie uns beim Einsenden Bescheid — Eilaufträge können wir häufig möglich machen.",
    "faq.title": "Häufig gestellte Fragen",
     "faq.q1": "Wo wird Ihre Arbeit gefertigt?",
     "faq.a1": "Alles entsteht in unserem eigenen Betrieb in Cockeysville, Maryland. Scannen, Design, Fräsen und Keramikschichtung erfolgen im Haus, und jedes Endprodukt ist in den USA gefertigt.",
@@ -847,7 +856,7 @@ window.EDL_I18N = {
     "pg.whatWeOffer": "Unser Angebot",
     "pg.materials": "Materialien & Optionen",
     "pg.turnaround": "Lieferzeit",
-    "pg.turnaroundVal": "Details zu Standardlieferzeiten folgen in Kürze — rufen Sie uns für aktuelle Zeiten an.",
+    "pg.turnaroundVal": "Die meisten Fälle sind in weniger als zwei Wochen ab Eingang im Labor fertig. Wenn Sie es schneller brauchen, sagen Sie uns beim Einsenden Bescheid — Eilaufträge können wir häufig möglich machen.",
     "pg.caseCaption": "Echter Fall aus unserem Labor",
 
     "pg.crowns.title": "Brücken, Kronen & Veneers",
