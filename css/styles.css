@@ -1323,8 +1323,9 @@ textarea:focus-visible, select:focus-visible, summary:focus-visible {
 }
 .hero-video .hero-points li { color: rgba(255, 255, 255, 0.88); }
 .hero-video .hero-points li::before { color: var(--gold); }
+/* Reduced motion: keep the still frame, skip the moving video */
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg { display: none; }
+  .hero-pause { display: none; }
 }
 html.m .hero-video { min-height: 72vh; }
 

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/img/logo.png">
-<link rel="stylesheet" href="css/styles.css?v=20">
+<link rel="stylesheet" href="css/styles.css?v=21">
 </head>
 <body>
 
@@ -23,10 +23,9 @@
 
 <!-- ===== Hero: full-screen lab video ===== -->
 <section class="hero hero-video">
-  <video class="hero-bg" autoplay muted loop playsinline preload="metadata"
-         poster="assets/img/hero-poster.jpg" aria-hidden="true" id="hero-video">
-    <source src="assets/video/lab-loop.mp4?v=3" type="video/mp4">
-  </video>
+  <video class="hero-bg" muted loop playsinline preload="none"
+         poster="assets/img/hero-poster.jpg" aria-hidden="true" id="hero-video"
+         data-src="assets/video/lab-loop.mp4?v=3"></video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-content">
     <p class="eyebrow" data-i18n="hero.eyebrow">Full-service digital dental laboratory · Cockeysville, MD</p>
@@ -349,6 +348,6 @@
 <script src="js/db.js?v=3"></script>
 <script src="js/auth.js"></script>
 <script src="js/site.js?v=7"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>

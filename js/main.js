@@ -17,16 +17,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Hero video pause/play (508: moving content must be pausable)
+  /* Hero video.
+     Phones keep the poster and download nothing — the clip is decorative,
+     and it is not worth several megabytes of someone's mobile data. The
+     same applies when the visitor has asked to save data or to reduce
+     motion. Everyone else gets the video attached and played. */
   const video = document.getElementById("hero-video");
   const pauseBtn = document.getElementById("hero-pause");
+
+  if (video) {
+    const isPhone = window.matchMedia("(max-width: 900px)").matches;
+    const savesData = navigator.connection && navigator.connection.saveData;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (isPhone || savesData || reducedMotion) {
+      // Poster stays on screen; there is no video to fetch or control.
+      if (pauseBtn) pauseBtn.hidden = true;
+    } else {
+      video.src = video.dataset.src;
+      video.setAttribute("autoplay", "");
+      // If autoplay is refused (background tab, browser policy) the poster
+      // stays up and the button simply offers to start it.
+      video.play().catch(() => {});
+    }
+  }
+
   if (video && pauseBtn) {
+    // Keep the control in step with what the video is actually doing
+    function syncPauseBtn() {
+      const playing = !video.paused;
+      pauseBtn.textContent = playing ? "⏸" : "▶";
+      pauseBtn.setAttribute("aria-pressed", String(playing));
+      pauseBtn.setAttribute("aria-label",
+        playing ? "Pause background video" : "Play background video");
+    }
+    video.addEventListener("play", syncPauseBtn);
+    video.addEventListener("pause", syncPauseBtn);
+    syncPauseBtn();
+
     pauseBtn.addEventListener("click", () => {
-      const paused = video.paused;
-      if (paused) video.play(); else video.pause();
-      pauseBtn.textContent = paused ? "⏸" : "▶";
-      pauseBtn.setAttribute("aria-pressed", String(!paused));
-      pauseBtn.setAttribute("aria-label", paused ? "Pause background video" : "Play background video");
+      if (video.paused) video.play().catch(() => {});
+      else video.pause();
     });
   }
 
